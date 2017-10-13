@@ -16,17 +16,15 @@ httr::set_config(httr::config(ssl_verifypeer = 0L))
 finance_lovs <- readr::read_csv("finance_lovs.csv")
 
 # ddh_lovs <- readxl::read_excel("ddh_lovs.xlsx")
-ddh_lovs <- ddhconnect::get_lovs(root_url = root_url)
-# %>%
-# rename(ddh_machine_name = machine_name, field_lovs = list_value_name)
-names(ddh_lovs)[names(ddh_lovs) == "ddh_machine_name"] <- "machine_name"
-names(ddh_lovs)[names(ddh_lovs) == "field_lovs"] <- "list_value_name"
+ddh_lovs <- ddhconnect::get_lovs(root_url = root_url) %>%
+  rename(ddh_machine_name = machine_name, field_lovs = list_value_name)
+# names(ddh_lovs)[names(ddh_lovs) == "ddh_machine_name"] <- "machine_name"
+# names(ddh_lovs)[names(ddh_lovs) == "field_lovs"] <- "list_value_name"
 
 ddh_finance_map <- readxl::read_excel("ddh_finance_map.xlsx")
 
-ddh_fields <- ddhconnect::get_fields(root_url = root_url)
-# %>%
-# rename(ddh_machine_name = machine_name)
+ddh_fields <- ddhconnect::get_fields(root_url = root_url) %>%
+  rename(ddh_machine_name = machine_name)
 names(ddh_fields)[names(ddh_fields) == "ddh_machine_name"] <- "machine_name"
 
 

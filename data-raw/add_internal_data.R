@@ -1,36 +1,34 @@
 library(dplyr)
 library(jsonlite)
-library(magrittr)
-# using code from mdlibtoddh
+#library(magrittr)
 
-# CHECK consistency between STG & PROD taxonomy
-# check_taxonomy_services()
+# based on mdlibtoddh add_internal_data
+
 # Set root_url URL
 # currently pulling from staging
 # root_url <- ddhconnect:::production_root_url
 root_url <- "https://newdatacatalogstg.worldbank.org/"
 
 # STEP 1: Get data --------------------------------------------------------
-
-# Metadata from flat files
 httr::set_config(httr::config(ssl_verifypeer = 0L))
 
+# Metadata from flat files
 finance_lovs <- readr::read_csv("finance_lovs.csv")
 
 # ddh_lovs <- readxl::read_excel("ddh_lovs.xlsx")
 ddh_lovs <- ddhconnect::get_lovs(root_url = root_url)
-#   %>%rename(ddh_machine_name = machine_name, field_lovs = list_value_name)
+# %>%
+# rename(ddh_machine_name = machine_name, field_lovs = list_value_name)
 names(ddh_lovs)[names(ddh_lovs) == "ddh_machine_name"] <- "machine_name"
 names(ddh_lovs)[names(ddh_lovs) == "field_lovs"] <- "list_value_name"
-  
-ddh_finance_map <- readxl::read_excel("ddh_finance_map.xlsx")
-#names(ddh_finance_map)[names(ddh_finance_map) == "ddh_json_key"] <- "machine_name"
 
-ddh_fields <- ddhconnect::get_fields(root_url = root_url) 
-# %>% rename(ddh_machine_name = machine_name)
+ddh_finance_map <- readxl::read_excel("ddh_finance_map.xlsx")
+
+ddh_fields <- ddhconnect::get_fields(root_url = root_url)
+# %>%
+# rename(ddh_machine_name = machine_name)
 names(ddh_fields)[names(ddh_fields) == "ddh_machine_name"] <- "machine_name"
 
-lookup <- ddh_fields
 
 # STEP 2: Check data consistency ------------------------------------------
 # lookup & finance
@@ -47,10 +45,10 @@ lookup <- ddh_fields
 #          left_join(ddh_finance_map, by = "machine_name") %>%
 #          left_join(finance_lovs, by = c("machine_name", "list_value_name"))
 
-fin_lookup <- ddh_finance_map %>%
+lookup <- ddh_finance_map %>%
               full_join(ddh_lovs, by = "machine_name") %>%
-              left_join(finance_lovs, by = c("machine_name", "list_value_name"))
-
+              left_join(finance_lovs, by = c("machine_name", "list_value_name"))%>%
+              select(machine_name, finance_json_key, list_value_name, finance_value, tid)
 
 
 # Save table -------------------------------------------------------

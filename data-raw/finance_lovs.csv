@@ -2,24 +2,19 @@ machine_name,finance_value,list_value_name
 field_wbddh_update_frequency,Monthly,Monthly
 field_wbddh_update_frequency,Quarterly,Quarterly
 field_wbddh_update_frequency,No fixed schedule,No fixed schedule
-field_wbddh_update_frequency,Archived,Archived
+field_wbddh_update_frequency,Archived,No further updates planned
 field_wbddh_update_frequency,Daily,Daily
 field_wbddh_update_frequency,No further updates planned,No further updates planned
 field_wbddh_update_frequency,Annually,Annually
 field_wbddh_terms_of_use,Creative Commons Attribution 3.0 IGO,Open Data Access
 field_wbddh_terms_of_use,Creative Commons Attribution 3.0 Unported,Open Data Access
 field_wbddh_terms_of_use,Creative Commons Attribution | Noncommercial 3.0 Unported,Open Data Access
-field_ddh_harvest_src,,Finances
 field_wbddh_economy_coverage,World,Economy Coverage not specified
 field_wbddh_economy_coverage,IDA,IDA
 field_wbddh_economy_coverage,IBRD,IBRD
 field_wbddh_economy_coverage,Middle East & North Africa,Economy Coverage not specified
 field_wbddh_economy_coverage,South Asia,Economy Coverage not specified
-field_topic,,Topic not specified
-field_wbddh_data_class,,Public
 field_wbddh_languages_supported,English,English
-field_format,,Format Not Specified
-field_wbddh_resource_type,,Query Tool
 field_wbddh_country,,Region/Country not specified
 field_wbddh_country,Morocco,Morocco
 field_wbddh_country,Afghanistan,Afghanistan

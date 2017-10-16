@@ -13,20 +13,15 @@ root_url <- "https://newdatacatalogstg.worldbank.org/"
 httr::set_config(httr::config(ssl_verifypeer = 0L))
 
 # Metadata from flat files
-finance_lovs <- readr::read_csv("finance_lovs.csv")
+finance_lovs <- readr::read_csv("./data-raw/finance_lovs.csv")
 
 # ddh_lovs <- readxl::read_excel("ddh_lovs.xlsx")
-ddh_lovs <- ddhconnect::get_lovs(root_url = root_url) %>%
-  rename(ddh_machine_name = machine_name, field_lovs = list_value_name)
-# names(ddh_lovs)[names(ddh_lovs) == "ddh_machine_name"] <- "machine_name"
-# names(ddh_lovs)[names(ddh_lovs) == "field_lovs"] <- "list_value_name"
+ddh_lovs <- ddhconnect::get_lovs(root_url = root_url)
 
-ddh_finance_map <- readxl::read_excel("ddh_finance_map.xlsx")
 
-ddh_fields <- ddhconnect::get_fields(root_url = root_url) %>%
-  rename(ddh_machine_name = machine_name)
-names(ddh_fields)[names(ddh_fields) == "ddh_machine_name"] <- "machine_name"
+ddh_finance_map <- readxl::read_excel("./data-raw/ddh_finance_map.xlsx")
 
+ddh_fields <- ddhconnect::get_fields(root_url = root_url)
 
 # STEP 2: Check data consistency ------------------------------------------
 # lookup & finance
@@ -45,12 +40,13 @@ names(ddh_fields)[names(ddh_fields) == "ddh_machine_name"] <- "machine_name"
 
 lookup <- ddh_finance_map %>%
               full_join(ddh_lovs, by = "machine_name") %>%
-              left_join(finance_lovs, by = c("machine_name", "list_value_name"))%>%
+              left_join(finance_lovs, by = c("machine_name", "list_value_name")) %>%
               select(machine_name, finance_json_key, list_value_name, finance_value, tid)
 
 
 # Save table -------------------------------------------------------
 devtools::use_data(lookup,
-                  finance_lovs,
-                  ddh_lovs,
-                  ddh_finance_map, overwrite = TRUE)
+                   finance_lovs,
+                   ddh_lovs,
+                   ddh_finance_map,
+                   overwrite = TRUE)

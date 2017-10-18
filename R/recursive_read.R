@@ -13,12 +13,6 @@ recursive_read <- function(finance_list, i) {
 
   column_name <- finance_list$results$view$metadata$custom_fields$`Additional Information`$`Range Column`[[i]]
   if(is_valid_column(column_name)){
-    if(column_name == "transaction_posting_date"){
-      column_name <- "fund_allocation_date"
-    }
-    if(i == 76){
-      column_name <- "fiscal_year"
-    }
     idx <- match(column_name, finance_list$results$view$columns[[i]]$fieldName)
     start_date <- finance_list$results$view$columns[[i]]$cachedContents$smallest[[idx]]
     end_date <- finance_list$results$view$columns[[i]]$cachedContents$largest[[idx]]

@@ -48,6 +48,6 @@ fin_to_ddh_keys <- function(metadata_in,
 
 format_lookup <- function(metadata_in, lookup_name) {
   keys <- unlist(strsplit(lookup_name, "/"))
-  values <- purrr::at_depth(metadata_in, .depth = 0, .f = keys)
+  values <- purrr::modify_depth(metadata_in, .depth = 0, .f = keys)
   return(values$view)
 }

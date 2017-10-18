@@ -13,14 +13,6 @@
 #'
 
 add_constant_metadata <- function(metadata_list) {
-
-  # metadata_list$field_wbddh_languages_supported <- 'English'
-  # metadata_list$field_wbddh_data_type <- 'Microdata'
-  # # metadata_list$field_contact_email <- 'microdata@worldbank.org'
-  # metadata_list$field_ddh_harvest_src <- "Microdata"
-  # metadata_list$field_topic <- 'Topic not specified'
-  # metadata_list$field_wbddh_resource_type <- "Landing page"
-
   metadata_list$field_wbddh_data_class <- 'Public'
   metadata_list$field_wbddh_dsttl_upi <- 'Francisco Ciriaci'
   metadata_list$field_license_wbddh <- 'Creative Commons Attribution 4.0'
@@ -28,6 +20,5 @@ add_constant_metadata <- function(metadata_list) {
   metadata_list$field_wbddh_languages_supported <- 'English'
   metadata_list$field_ddh_extrernal_contact_email <- 'wbfinances@worldbank.org'
   metadata_list$field_wbddh_source <- 'World Bank Group'
-
   return(metadata_list)
 }

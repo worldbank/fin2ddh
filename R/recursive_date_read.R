@@ -7,17 +7,18 @@
 #' @export
 #'
 
-recursive_read <- function(finance_list, i) {
+recursive_date_read <- function(metadata_in) {
   start_date <- NULL
   end_date <- NULL
 
-  column_name <- finance_list$results$view$metadata$custom_fields$`Additional Information`$`Range Column`[[i]]
+  column_name <- metadata_in$view$metadata$custom_fields$`Additional Information`$`Range Column`
   if(is_valid_column(column_name)){
-    idx <- match(column_name, finance_list$results$view$columns[[i]]$fieldName)
-    start_date <- finance_list$results$view$columns[[i]]$cachedContents$smallest[[idx]]
-    end_date <- finance_list$results$view$columns[[i]]$cachedContents$largest[[idx]]
+    df_columns <- fromJSON(toJSON(metadata_in$view$columns))
+    column <- dplyr::subset(df_columns, df_columns$fieldName == column_name)
+    start_date <- unlist(row$cachedContents$smallest)
+    end_date <- unlist(row$cachedContents$largest)
     # deal with date formats that are hard to parse
-    data_type_name <- finance_list$results$view$columns[[i]]$dataTypeName[[idx]]
+    data_type_name <- unlist(row$dataTypeName)
     if(data_type_name == "text") {
       start_date <- clean_date(start_date)
       end_date <- clean_date(end_date)

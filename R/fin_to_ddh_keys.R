@@ -30,14 +30,18 @@ fin_to_ddh_keys <- function(metadata_in,
     }
   }
 
-  default_fields = c("field_frequency", "field_wbddh_country", "field_wbddh_economy_coverage")
-  default_values = c("Periodicity not specified", "Region/Country not specified", "Economy coverage specified")
+  default_fields <- c("field_frequency", "field_wbddh_country", "field_wbddh_economy_coverage")
+  default_values <- c("Periodicity not specified", "Region/Country not specified", "Economy coverage specified")
   default_value_lookup <- hash::hash(keys = default_fields, values = default_values)
   for(machine_name in default_fields) {
     if(is.null(metadata_out[[machine_name]])) {
       metadata_out[[machine_name]] <- default_value_lookup[[machine_name]]
     }
   }
+
+  date_list <- recursive_date_read(metadata_in)
+  metadata_out[["field_wbddh_start_date"]] <- date_list$start_date
+  metadata_out[["field_wbddh_end_date"]] <- date_list$end_date
 
   return(metadata_out)
 }

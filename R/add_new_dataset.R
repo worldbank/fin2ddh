@@ -14,7 +14,8 @@ add_new_dataset <- function(url) {
   # STEP 1: Collect data from API
   temp <- extract_fin_metadata(url)
   temp <- filter_fin_metadata(temp)
-  for(i in temp) {
-
+  temp <- temp[["results"]]
+  for(i in length(temp)) {
+    metadata_list <- fin_to_ddh_keys(metadata_in = temp[[i]])
   }
 }

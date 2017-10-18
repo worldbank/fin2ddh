@@ -5,6 +5,7 @@
 #' @param metadata_out list: Package object: mdlibtoddh::md_placeholder
 #' @param lookup data.frame: Package object: mdlibtoddh::lookup
 #'
+#' @importFrom hash hash
 #' @importFrom magrittr "%>%"
 #' @return list
 #'

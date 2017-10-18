@@ -14,7 +14,6 @@
 fin_to_ddh_keys <- function(metadata_in,
                                 metadata_out = mdlibtoddh::md_placeholder,
                                 lookup = fin2ddh::lookup) {
-  machine_names <- sort(names(metadata_out))
   fin_keys_lookup <- lookup %>% dplyr::filter(!is.na(finance_json_key))
   lookup_unique <- dplyr::distinct(fin_keys_lookup, ddh_machine_name, finance_json_key)
   fin_machine_names <- lookup_unique$ddh_machine_name

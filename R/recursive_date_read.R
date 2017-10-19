@@ -3,7 +3,7 @@
 #' @param finance_list list: object returned by reading the json file from the API using jsonlite::fromJSON()
 #' @param i numeric: index of the specific dataset
 #'
-#' @import jsonlite
+#' @import jsonlite fromJSON, toJSON
 #' @return list
 #' @export
 #'

@@ -1,7 +1,6 @@
 #' read values from the date fields which require a recursive read
 #'
-#' @param finance_list list: object returned by reading the json file from the API using jsonlite::fromJSON()
-#' @param i numeric: index of the specific dataset
+#' @param metadata_in list: a dataset extracted from the finances data portal
 #'
 #' @return list
 #' @export

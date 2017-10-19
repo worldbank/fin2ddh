@@ -4,18 +4,27 @@
 #'
 #' @param url string: Financa data api
 #'
+#' @import jsonlite
+#' @importFrom magrittr "%>%"
 #' @return list
 #' @export
 #'
 
-url <- "http://finances.worldbank.org/api/search/views.json?limitTo=tables&datasetView=DATASET"
-
 add_new_dataset <- function(url) {
   # STEP 1: Collect data from API
   temp <- extract_fin_metadata(url)
+
+  # STEP 2: Filter to results in catalog
   temp <- filter_fin_metadata(temp)
-  temp <- temp[["results"]]
-  for(i in length(temp)) {
-    metadata_list <- fin_to_ddh_keys(metadata_in = temp[[i]])
-  }
+
+  # STEP 3: MAP to keys and flatten
+  temp_mapped <- temp
+  temp_mapped[["results"]] <- temp[["results"]] %>%
+    purrr::map(fin_to_ddh_keys)
+  # %>%
+#    purrr::map(purrr:flatten)
+  return(temp_mapped)
 }
+
+#url <- "http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET"
+#result <- add_new_dataset(url)

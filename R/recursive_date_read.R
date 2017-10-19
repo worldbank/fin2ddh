@@ -2,6 +2,7 @@
 #'
 #' @param metadata_in list: a dataset extracted from the finances data portal
 #'
+#' @import jsonlite
 #' @return list
 #' @export
 #'

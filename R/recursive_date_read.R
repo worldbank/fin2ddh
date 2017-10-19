@@ -14,7 +14,7 @@ recursive_date_read <- function(metadata_in) {
   column_name <- metadata_in$view$metadata$custom_fields$`Additional Information`$`Range Column`
   if(is_valid_column(column_name)){
     df_columns <- fromJSON(toJSON(metadata_in$view$columns))
-    column <- subset(df_columns, df_columns$fieldName == column_name)
+    row <- subset(df_columns, df_columns$fieldName == column_name)
     start_date <- unlist(row$cachedContents$smallest)
     end_date <- unlist(row$cachedContents$largest)
     # deal with date formats that are hard to parse

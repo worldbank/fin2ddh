@@ -10,10 +10,9 @@
 #' @export
 #'
 
-url <- "http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET"
-add_new_dataset <- function(url) {
+add_new_dataset <- function(root_url) {
   # STEP 1: Collect data from API
-  temp <- extract_fin_metadata(url)
+  temp <- extract_fin_metadata(root_url)
 
   # STEP 2: Filter to results in catalog
   temp <- filter_fin_metadata(temp)

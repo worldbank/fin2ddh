@@ -4,44 +4,41 @@
 #'
 #' @param metadata list:
 #'
-#' @import flatten
+#' @importFrom purrr flatten
 #' @importFrom magrittr "%>%"
 #' @return list
 #' @export
 #'
 
-map_fin_metadata <- function(metadata_list, lkup_tids) {
-# iterate one at a time
-    survey_fields <- names(metadata_list)
+map_fin_metadata <- function(metadata_list) {
 
-    lkup_values <- unique(finance_lovs$machine_name) %>%
-                purrr::map(function(x){
-                  fin_vals <- finance_lovs[finance_lovs$machine_name==x,]$finance_value
-                  return(fin_vals)
-                })
-    names(lkup_values) <- unique(finance_lovs$machine_name)
+    survey_fields <- names(metadata_list)
+    lkup_values <- finance_lovs
+    lkup_tids <- ddh_lovs
+    
     # Map values to DDH controlled vocabulary ---------------------------------
-    controlled_variables <- survey_fields[survey_fields %in% finance_lovs$machine_name]
+    controlled_variables <- survey_fields[survey_fields %in% names(lkup_values)]
     metadata_list[controlled_variables] <- purrr::map(controlled_variables, function(x) {
       map_valid_lovs(metadata_list[[x]], lkup_values[[x]])
     })
-
+    
+    #current mapping not matching for expected fields and expected list value fields
+    # removed periodicity and license
+    default_fields <- c("field_wbddh_country", "field_wbddh_economy_coverage")
+    default_values <- c("Region/Country not specified", "Economy Coverage not specified")
+    default_value_lookup <- hash::hash(keys = default_fields, values = default_values)
+    for(machine_name in default_fields) {
+      if(is.null(metadata_list[[machine_name]])) {
+        metadata_list[[machine_name]] <- default_value_lookup[[machine_name]]
+      }
+    }
+    survey_fields <- names(metadata_list)
+    
     # Map values to DDH controlled tids
     controlled_variables <- survey_fields[survey_fields %in% names(lkup_tids)]
     metadata_list[controlled_variables] <- purrr::map(controlled_variables, function(x) {
       map_valid_lovs(metadata_list[[x]], lkup_tids[[x]])
     })
 
-
-    metadata_list %>%
-      map_if(if.NULL(type)) %>%
-      map_if()
-
-
-      if (metadata_list == NULL){
-      }
-
     return(metadata_list)
   }
-
-}

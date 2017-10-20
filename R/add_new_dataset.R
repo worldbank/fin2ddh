@@ -10,6 +10,7 @@
 #' @export
 #'
 
+url <- "http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET"
 add_new_dataset <- function(url) {
   # STEP 1: Collect data from API
   temp <- extract_fin_metadata(url)
@@ -18,13 +19,9 @@ add_new_dataset <- function(url) {
   temp <- filter_fin_metadata(temp)
 
   # STEP 3: MAP to keys and flatten
-  temp_mapped <- temp
-  temp_mapped[["results"]] <- temp[["results"]] %>%
-    purrr::map(fin_to_ddh_keys)
-  # %>%
-#    purrr::map(purrr:flatten)
-  return(temp_mapped)
+  mapped_finance <- temp[["results"]] %>%
+    purrr::map(fin_to_ddh_keys) %>%
+    purrr::map(add_constant_metadata) %>%
+    purrr::map(map_fin_metadata)
+  return(mapped_finance)
 }
-
-#url <- "http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET"
-#result <- add_new_dataset(url)

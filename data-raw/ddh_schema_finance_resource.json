@@ -1,0 +1,24 @@
+{
+	"title": "",
+	"body": {
+		"und": [{
+			"value": ""
+		}]
+	},
+	"field_wbddh_data_class": {
+		"und": {
+			"tid": ""
+		}
+	},
+	"field_exception_s_": [],
+	"field_wbddh_resource_type": {
+		"und": {
+			"tid": ""
+		}
+	},
+	"field_link_api": {
+		"und": [{
+			"url": ""
+		}]
+	}
+}

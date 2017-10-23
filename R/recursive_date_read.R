@@ -2,7 +2,7 @@
 #'
 #' @param metadata_in list: a dataset extracted from the finances data portal
 #'
-#' @import jsonlite fromJSON, toJSON
+#' @import jsonlite
 #' @return list
 #' @export
 #'
@@ -13,7 +13,7 @@ recursive_date_read <- function(metadata_in) {
 
   column_name <- metadata_in$view$metadata$custom_fields$`Additional Information`$`Range Column`
   if(is_valid_column(column_name)){
-    df_columns <- fromJSON(toJSON(metadata_in$view$columns))
+    df_columns <- jsonlite::fromJSON(toJSON(metadata_in$view$columns))
     row <- subset(df_columns, df_columns$fieldName == column_name)
     start_date <- unlist(row$cachedContents$smallest)
     end_date <- unlist(row$cachedContents$largest)
@@ -38,5 +38,15 @@ clean_date <- function(dt) {
   if(nchar(dt) == 6){
     clean_dt <- gsub("FY", "", dt)
   }
+  if(is_year(clean_dt)) {
+    clean_dt <- paste(clean_dt, "01", "01", sep="-")
+  }
+  else{
+    clean_dt <- gsub("T", " ", clean_dt)
+  }
   return(clean_dt)
+}
+
+is_year <- function(dt) {
+  return(!is.na(is.numeric(dt)) && as.numeric(dt) >= 1900 && as.numeric(dt) <= 2100)
 }

@@ -33,20 +33,20 @@ is_valid_column <- function(column_name) {
 
 clean_date <- function(dt) {
   if(nchar(dt) == 4){
-    clean_dt <- gsub("FY", "20", dt)
+    dt <- gsub("FY", "20", dt)
   }
   if(nchar(dt) == 6){
-    clean_dt <- gsub("FY", "", dt)
+    dt <- gsub("FY", "", dt)
   }
-  if(is_year(clean_dt)) {
-    clean_dt <- paste(clean_dt, "01", "01", sep="-")
+  if(is_year(dt)) {
+    dt <- paste(dt, "01", "01", sep="-")
   }
   else{
-    clean_dt <- gsub("T", " ", clean_dt)
+    dt <- gsub("T", " ", dt)
   }
-  return(clean_dt)
+  return(dt)
 }
 
 is_year <- function(dt) {
-  return(!is.na(is.numeric(dt)) && as.numeric(dt) >= 1900 && as.numeric(dt) <= 2100)
+  return(!is.na(as.numeric(dt)) && as.numeric(dt) >= 1900 && as.numeric(dt) <= 2100)
 }

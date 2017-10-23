@@ -21,7 +21,7 @@ add_new_dataset <- function(root_url) {
   mapped_finance <- temp[["results"]] %>%
     purrr::map(fin_to_ddh_keys) %>%
     purrr::map(add_constant_metadata) %>%
-    purrr::map(map_fin_metadata)
+    purrr::map(map_fin_metadata) %>%
     purrr::map(create_json_dataset)
   return(mapped_finance)
 }

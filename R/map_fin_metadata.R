@@ -24,8 +24,8 @@ map_fin_metadata <- function(metadata_list) {
     
     #current mapping not matching for expected fields and expected list value fields
     # removed periodicity and license
-    default_fields <- c("field_wbddh_country", "field_wbddh_economy_coverage")
-    default_values <- c("Region/Country not specified", "Economy Coverage not specified")
+    default_fields <- c("field_wbddh_country", "field_wbddh_economy_coverage", "field_license_wbddh")
+    default_values <- c("Region/Country not specified", "Economy Coverage not specified", "Creative Commons Attribution 4.0")
     default_value_lookup <- hash::hash(keys = default_fields, values = default_values)
     for(machine_name in default_fields) {
       if(is.null(metadata_list[[machine_name]])) {

@@ -1,0 +1,227 @@
+{
+    "title": "",
+    "status": "",
+    "field_ddh_harvest_src": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "body": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_terms_of_use": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_collaborator_upi": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_end_date": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_ddh_external_contact_email": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_search_tags": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_copyright": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_modified_date": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_time_periods[0].value": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_ddh_harvest_sys_id": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_data_class": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_periodicity": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_type_of_license": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_update_schedule": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_ds_source": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_citation_text": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_gps_ccsas": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_publisher_name": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_time_periods[0].value2": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_dsttl_upi": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_topic": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_start_date": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_next_expected_update": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_tags": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_data_notes": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_release_date": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_reference_system": {
+        "und": [
+            {
+                "value": ""
+            }
+        ]
+    },
+    "field_wbddh_update_frequency": {
+        "und": []
+    },
+    "field_license_wbddh": {
+        "und": []
+    },
+    "field_wbddh_economy_coverage": {
+        "und": []
+    },
+    "field_wbddh_languages_supported": {
+        "und": []
+    },
+    "field_wbddh_country": {
+        "und": []
+    },
+    "field_wbddh_source": {
+        "und": []
+    },
+    "field_frequency": {
+        "und": []
+    },
+    "field_wbddh_data_type": {
+        "und": []
+    },
+    "field_granularity_list": {
+        "und": []
+    }
+}

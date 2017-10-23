@@ -9,20 +9,20 @@
 #' @export
 #'
 
-create_json_dataset <- function(metadata_list, json_template = mdlibtoddh::json_template_dataset) {
+create_json_dataset <- function(metadata_list, json_template = fin2ddh::ddh_schema_finance_dataset) {
 
   json_template <- jsonlite::fromJSON("./data-raw/ddh_schema_finance_dataset.json")
   for (field_name in names(json_template)) {
     print(field_name)
     if (is.character(json_template[[field_name]])) {
-      json_template[[field_name]] <- mdlibtoddh::safe_unbox(mdlibtoddh::safe_assign(metadata_list[[field_name]]))
+      json_template[[field_name]] <- fin2ddh::safe_unbox(fin2ddh::safe_assign(metadata_list[[field_name]]))
     }
     else if(is.null(names(json_template[[field_name]]$und))) {
       json_template[[field_name]]$und <- unlist(stringr::str_split(metadata_list[[field_name]], pattern = ';'))
     }
     else {
       subfield_name <- names(json_template[[field_name]]$und)
-      json_template[[field_name]]$und[[subfield_name]] <- mdlibtoddh::safe_unbox(mdlibtoddh::safe_assign(metadata_list[[field_name]]))
+      json_template[[field_name]]$und[[subfield_name]] <- fin2ddh::safe_unbox(fin2ddh::safe_assign(metadata_list[[field_name]]))
     }
   }
 

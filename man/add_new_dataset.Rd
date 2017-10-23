@@ -4,7 +4,8 @@
 \alias{add_new_dataset}
 \title{add_new_dataset}
 \usage{
-add_new_dataset(url)
+add_new_dataset(root_url, ddh_credentials = list(cookie = dkanr::get_cookie(),
+  token = dkanr::get_token()))
 }
 \arguments{
 \item{url}{string: Financa data api}

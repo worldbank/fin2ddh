@@ -21,3 +21,6 @@ map_valid_lovs <- function(values, lkup_vector) {
 are_valid_lovs <- function(values, accepted_values) {
   all(values %in% accepted_values)
 }
+
+safe_unbox <- purrr::possibly(jsonlite::unbox, otherwise = '')
+safe_assign <- function(x) {if (length(x) > 0) {x} else {""}}

@@ -1,13 +1,6 @@
 {
     "title": "",
     "status": "",
-    "field_ddh_harvest_src": {
-        "und": [
-            {
-                "value": ""
-            }
-        ]
-    },
     "body": {
         "und": [
             {
@@ -78,13 +71,6 @@
             }
         ]
     },
-    "field_wbddh_data_class": {
-        "und": [
-            {
-                "value": ""
-            }
-        ]
-    },
     "field_wbddh_periodicity": {
         "und": [
             {
@@ -120,13 +106,6 @@
             }
         ]
     },
-    "field_wbddh_gps_ccsas": {
-        "und": [
-            {
-                "value": ""
-            }
-        ]
-    },
     "field_wbddh_publisher_name": {
         "und": [
             {
@@ -142,13 +121,6 @@
         ]
     },
     "field_wbddh_dsttl_upi": {
-        "und": [
-            {
-                "value": ""
-            }
-        ]
-    },
-    "field_topic": {
         "und": [
             {
                 "value": ""
@@ -223,5 +195,17 @@
     },
     "field_granularity_list": {
         "und": []
-    }
+    },
+    "field_ddh_harvest_src": {
+        "und": []
+    },
+    "field_wbddh_data_class": {
+        "und": []
+    },
+    "field_topic": {
+        "und": []
+    },
+    "field_wbddh_gps_ccsas": {
+        "und": []
+    },
 }

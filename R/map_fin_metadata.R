@@ -36,6 +36,7 @@ map_fin_metadata <- function(metadata_list) {
     
     # Map values to DDH controlled tids
     controlled_variables <- survey_fields[survey_fields %in% names(lkup_tids)]
+    controlled_variables <- names(Filter(Negate(is.null), metadata_list[controlled_variables]))
     metadata_list[controlled_variables] <- purrr::map(controlled_variables, function(x) {
       map_valid_lovs(metadata_list[[x]], lkup_tids[[x]])
     })

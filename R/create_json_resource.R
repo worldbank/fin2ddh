@@ -11,13 +11,13 @@
 
 create_json_resource <- function(metadata_list, json_template = mdlibtoddh::json_template_resource) {
 
-  json_template$title <- "Visit World Bank Finances"
-  json_template$field_wbddh_resource_type$und$tid <- "Query Tool"
-  json_template$field_wbddh_data_class$und$tid <- "Public"
-  json_template$field_link_api$und$url <- paste0("http://finances.worldbank.org/d/", metadata_list$field_ddh_harvest_sys_id)
+  json_template$title <- safe_unbox("Visit World Bank Finances")
+  json_template$field_wbddh_resource_type$und$tid <- safe_unbox("Query Tool")
+  json_template$field_wbddh_data_class$und$tid <- safe_unbox("Public")
+  json_template$field_link_api$und$url <- safe_unbox(paste0("http://finances.worldbank.org/d/", metadata_list$field_ddh_harvest_sys_id))
   json_template$body <- NULL
 
   # Add required dataset elements
-  json_template$type <- "resource"
+  json_template$type <- jsonlite::unbox("resource")
   return(jsonlite::toJSON(json_template, pretty = TRUE))
 }

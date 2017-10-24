@@ -19,7 +19,8 @@ recursive_date_read <- function(metadata_in) {
     end_date <- unlist(row$cachedContents$largest)
     # deal with date formats that are hard to parse
     data_type_name <- unlist(row$dataTypeName)
-    if(data_type_name == "text") {
+    # TODO: correct the double check
+    if(data_type_name == "text" || data_type_name == "calendar_date") {
       start_date <- clean_date(start_date)
       end_date <- clean_date(end_date)
     }

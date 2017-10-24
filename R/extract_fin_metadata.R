@@ -8,7 +8,6 @@
 #' @export
 #'
 
-url <- "http://finances.worldbank.org/api/search/views.json?limitTo=tables&datasetView=DATASET"
 extract_fin_metadata <- function(url){
   finance_data <- jsonlite::fromJSON(url, simplifyVector = FALSE)
   return(finance_data)

@@ -1,3 +1,6 @@
+#' format_metadata
+#'
+#' Format metadata fields to the format accepted by ddh
 #'
 #' @param metadata_in list: flattened list of metadata
 #' @param date_fields character: variables to be processed as dates

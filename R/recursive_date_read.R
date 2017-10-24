@@ -3,6 +3,7 @@
 #' @param metadata_in list: a dataset extracted from the finances data portal
 #'
 #' @import jsonlite
+#' @importfrom gtools invalid
 #' @return list
 #' @export
 #'
@@ -20,7 +21,7 @@ recursive_date_read <- function(metadata_in) {
     # deal with date formats that are hard to parse
     data_type_name <- unlist(row$dataTypeName)
     # TODO: correct the double check
-    if(data_type_name == "text" || data_type_name == "calendar_date") {
+    if(!gtools::invalid(data_type_name)) {
       start_date <- clean_date(start_date)
       end_date <- clean_date(end_date)
     }

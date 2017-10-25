@@ -20,8 +20,8 @@ ddh_finance_map <- readxl::read_excel("./data-raw/ddh_finance_map.xlsx")
 
 # STEP 2: Merge data ------------------------------------------------------
 lookup <- ddh_finance_map %>%
-              full_join(ddh_lovs, by = "machine_name") %>%
-              left_join(finance_lovs, by = c("machine_name", "list_value_name")) %>%
+              full_join(ddh_lovs_df, by = "machine_name") %>%
+              left_join(finance_lovs_df, by = c("machine_name", "list_value_name")) %>%
               select(machine_name, finance_json_key, list_value_name, finance_value, tid) %>%
               rename(ddh_machine_name = machine_name,
                      field_lovs = list_value_name)

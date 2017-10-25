@@ -41,9 +41,9 @@ add_new_dataset <- function(root_url = dkanr::get_url(),
     json_res <- create_json_resource(metadata_temp)
     resp_res <- ddhconnect::create_resource(credentials = ddh_credentials, body = json_res, root_url = root_url)
 
-    json_attach <- create_json_attach(metadata_list = metadata_temp, resource_nid = resp_res$node_id)
+    json_attach <- create_json_attach(metadata_list = metadata_temp, resource_nid = resp_res$nid)
     resp_attach <- attach_resource_to_dataset(credentials = ddh_credentials,
-                                              dataset_nid = resp_dat$node_id,
+                                              dataset_nid = resp_dat$nid,
                                               body = json_attach,
                                               root_url = root_url)
 

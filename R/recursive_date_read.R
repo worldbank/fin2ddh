@@ -3,7 +3,7 @@
 #' @param metadata_in list: a dataset extracted from the finances data portal
 #'
 #' @import jsonlite
-#' @importfrom gtools invalid
+#' @importFrom gtools invalid
 #' @return list
 #' @export
 #'

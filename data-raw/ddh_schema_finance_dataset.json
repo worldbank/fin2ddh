@@ -121,11 +121,9 @@
         ]
     },
     "field_wbddh_dsttl_upi": {
-        "und": [
-            {
+        "und": {
                 "autocomplete_hidden_value": ""
             }
-        ]
     },
     "field_wbddh_start_date": {
         "und": [

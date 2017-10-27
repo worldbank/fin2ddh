@@ -45,7 +45,7 @@ test_created_dataset <- function(nid, metadata_list, credentials, root_url = pro
   safe_assert(node_metadata$field_wbddh_economy_coverage$und[[1]]$tid, metadata_list$field_wbddh_economy_coverage)
   safe_assert(node_metadata$field_wbddh_languages_supported$und[[1]]$tid, metadata_list$field_wbddh_languages_supported)
   safe_assert(node_metadata$field_wbddh_country$und[[1]]$tid, metadata_list$field_wbddh_country)
-  safe_assert(node_metadata$field_frequency$und[[1]]$tid, metadata_list$field_frequency)
+  #safe_assert(node_metadata$field_frequency$und[[1]]$tid, metadata_list$field_frequency)
   safe_assert(node_metadata$field_wbddh_data_type$und[[1]]$tid, metadata_list$field_wbddh_data_type)
   safe_assert(node_metadata$field_granularity_list$und[[1]]$tid, metadata_list$field_granularity_list)
   safe_assert(node_metadata$field_ddh_harvest_src$und[[1]]$tid, metadata_list$field_ddh_harvest_src)

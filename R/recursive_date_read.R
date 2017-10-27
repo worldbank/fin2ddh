@@ -12,6 +12,11 @@ recursive_date_read <- function(metadata_in) {
   start_date <- NULL
   end_date <- NULL
 
+  modified_date_loc <- metadata_in$view$rowsUpdatedAt
+  release_date_loc <- metadata_in$view$createdAt
+  modified_date <- mdlibtoddh::timestamp_to_ddhdate(modified_date_loc)
+  release_date <- mdlibtoddh::timestamp_to_ddhdate(release_date_loc)
+
   column_name <- metadata_in$view$metadata$custom_fields$`Additional Information`$`Range Column`
   if(is_valid_column(column_name)){
     df_columns <- jsonlite::fromJSON(toJSON(metadata_in$view$columns))
@@ -25,8 +30,12 @@ recursive_date_read <- function(metadata_in) {
       start_date <- clean_date(start_date)
       end_date <- clean_date(end_date)
     }
-    return(list(start_date = start_date, end_date = end_date))
+    #return(list(start_date = start_date, end_date = end_date))
   }
+  return(list(start_date = start_date, 
+              end_date = end_date,
+              modified_date = modified_date,
+              release_date = release_date))
 }
 
 is_valid_column <- function(column_name) {
@@ -52,3 +61,4 @@ clean_date <- function(dt) {
 is_year <- function(dt) {
   return(!is.na(as.numeric(dt)) && as.numeric(dt) >= 1900 && as.numeric(dt) <= 2100)
 }
+

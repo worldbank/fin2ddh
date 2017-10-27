@@ -1,4 +1,4 @@
-#' map_fin_metadata.R
+#' map_fin_metadata
 #'
 #' Extract specific metadata from the Microdata API JSON response
 #'
@@ -32,6 +32,9 @@ map_fin_metadata <- function(metadata_list) {
         metadata_list[[machine_name]] <- default_value_lookup[[machine_name]]
       }
     }
+    
+    metadata_list[["body"]] <- gsub("[\n]", "", metadata_list[["body"]])
+    
     survey_fields <- names(metadata_list)
 
     # Map values to DDH controlled tids

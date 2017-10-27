@@ -26,7 +26,7 @@ add_new_dataset <- function(root_url = dkanr::get_url(),
   #   purrr::map(map_fin_metadata) %>%
   #   purrr::map(create_json_dataset)
 
-  for(i in 1:length(temp$results)){
+ for(i in 1:length(temp$results)){
     print(i)
     metadata_temp <- fin_to_ddh_keys(temp$results[[i]])
     metadata_temp <- add_constant_metadata(metadata_temp)
@@ -47,6 +47,10 @@ add_new_dataset <- function(root_url = dkanr::get_url(),
                                               body = json_attach,
                                               root_url = root_url)
 
+    test_created_dataset(nid = resp_dat$nid,
+                         metadata_list = metadata_temp,
+                         credentials = ddh_credentials,
+                         root_url = root_url)
     print(resp_dat$uri)
   }
 

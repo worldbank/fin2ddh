@@ -43,6 +43,9 @@ fin_to_ddh_keys <- function(metadata_in,
   date_list <- recursive_date_read(metadata_in)
   metadata_out[["field_wbddh_start_date"]] <- date_list$start_date
   metadata_out[["field_wbddh_end_date"]] <- date_list$end_date
+  metadata_out[["field_wbddh_modified_date"]] <- date_list$modified_date
+  metadata_out[["field_wbddh_release_date"]] <- date_list$release_date
+  
 
   return(metadata_out)
 }

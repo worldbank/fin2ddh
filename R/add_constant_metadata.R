@@ -23,5 +23,6 @@ add_constant_metadata <- function(metadata_list) {
   metadata_list$field_ddh_external_contact_email <- 'wbfinances@worldbank.org'
   metadata_list$field_wbddh_source <- 'World Bank Group'
   metadata_list$field_wbddh_data_type <- 'Other'
+  metadata_list$field_tags <- 'finances.worldbank.org'
   return(metadata_list)
 }

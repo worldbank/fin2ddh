@@ -19,5 +19,7 @@ create_json_resource <- function(metadata_list, json_template = mdlibtoddh::json
 
   # Add required dataset elements
   json_template$type <- jsonlite::unbox("resource")
+  json_template$workflow_status <- jsonlite::unbox("published")
+  
   return(jsonlite::toJSON(json_template, pretty = TRUE))
 }

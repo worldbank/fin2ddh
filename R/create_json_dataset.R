@@ -32,6 +32,7 @@ create_json_dataset <- function(metadata_list, json_template = fin2ddh::ddh_sche
 
   # Add required dataset elements
   json_template$type <- jsonlite::unbox("dataset")
+  json_template$workflow_status <- jsonlite::unbox("published")
 
   return(jsonlite::toJSON(json_template, pretty = TRUE))
 }

@@ -27,7 +27,7 @@ create_json_dataset <- function(metadata_list, json_template = fin2ddh::ddh_sche
   }
 
   # remove empty elements
-  to_keep <- names(metadata_list[!purrr::map_int(metadata_list, length) == 0])
+  to_keep <- names(metadata_list[!purrr::map_int(metadata_list, is_blank)])
   json_template <- json_template[names(json_template) %in% to_keep]
 
   # Add required dataset elements

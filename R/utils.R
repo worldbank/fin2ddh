@@ -26,5 +26,9 @@ safe_unbox <- purrr::possibly(jsonlite::unbox, otherwise = '')
 safe_assign <- function(x) {if (length(x) > 0) {x} else {""}}
 
 safe_assert <- function(file_value, orig_value) {
-  assertthat::assert_that((is.null(file_value) && is.null(orig_value)) || (file_value == gsub("[\n]", "", orig_value)))
+  assertthat::assert_that((is_blank(file_value) && is_blank(orig_value)) || (file_value == gsub("[\n]", "", orig_value)))
+}
+
+is_blank <- function(input){
+  return(gtools::invalid(input) || all(input == ""))
 }

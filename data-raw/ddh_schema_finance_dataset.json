@@ -139,13 +139,6 @@
             }
         ]
     },
-    "field_tags": {
-        "und": [
-            {
-                "value": ""
-            }
-        ]
-    },
     "field_wbddh_data_notes": {
         "und": [
             {
@@ -204,6 +197,9 @@
         "und": []
     },
     "field_wbddh_gps_ccsas": {
+        "und": []
+    },
+    "field_tags": {
         "und": []
     }
 }

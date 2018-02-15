@@ -24,5 +24,6 @@ add_constant_metadata <- function(metadata_list) {
   metadata_list$field_wbddh_source <- 'World Bank Group'
   metadata_list$field_wbddh_data_type <- 'Other'
   metadata_list$field_tags <- 'finances.worldbank.org'
+  metadata_list$field_license_wbddh <- 'Creative Commons Attribution 4.0'
   return(metadata_list)
 }

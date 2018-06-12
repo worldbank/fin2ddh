@@ -1,0 +1,57 @@
+#' fin_to_ddh_keys
+#' Extract specific metadata from the Microdata API JSON response
+#'
+#' @param metadata_in list: The output of mdlibconnect::get_survey_metadata
+#' @param metadata_out list: Package object: mdlibtoddh::md_placeholder
+#' @param lookup data.frame: Package object: mdlibtoddh::lookup
+#'
+#' @importFrom hash hash
+#' @importFrom magrittr "%>%"
+#' @return list
+#'
+#' @export
+#'
+
+fin_to_ddh_keys <- function(metadata_in,
+                                metadata_out = mdlibtoddh::md_placeholder,
+                                lookup = fin2ddh::lookup) {
+  fin_keys_lookup <- lookup %>% dplyr::filter(!is.na(finance_json_key))
+  lookup_unique <- dplyr::distinct(fin_keys_lookup, ddh_machine_name, finance_json_key)
+  fin_machine_names <- lookup_unique$ddh_machine_name
+  h <- hash::hash(keys = lookup_unique$ddh_machine_name, values = lookup_unique$finance_json_key)
+
+  for(machine_name in fin_machine_names) {
+    fin_name_raw <- h[[machine_name]]
+    metadata_out[[machine_name]] <- format_lookup(metadata_in, fin_name_raw)
+  }
+
+  for(machine_name in ddhconnect:::mandatory_text_fields) {
+    if(is.null(metadata_out[[machine_name]])){
+      metadata_out[[machine_name]] <- "Not specified"
+    }
+  }
+
+  # default_fields <- c("field_frequency", "field_wbddh_country", "field_wbddh_economy_coverage")
+  # default_values <- c("Periodicity not specified", "Region/Country not specified", "Economy coverage specified")
+  # default_value_lookup <- hash::hash(keys = default_fields, values = default_values)
+  # for(machine_name in default_fields) {
+  #   if(is.null(metadata_out[[machine_name]])) {
+  #     metadata_out[[machine_name]] <- default_value_lookup[[machine_name]]
+  #   }
+  # }
+
+  date_list <- recursive_date_read(metadata_in)
+  metadata_out[["field_wbddh_start_date"]] <- date_list$start_date
+  metadata_out[["field_wbddh_end_date"]] <- date_list$end_date
+  metadata_out[["field_wbddh_modified_date"]] <- date_list$modified_date
+  metadata_out[["field_wbddh_release_date"]] <- date_list$release_date
+  
+
+  return(metadata_out)
+}
+
+format_lookup <- function(metadata_in, lookup_name) {
+  keys <- unlist(strsplit(lookup_name, "/"))
+  values <- purrr::modify_depth(metadata_in, .depth = 0, .f = keys)
+  return(values$view)
+}

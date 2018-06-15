@@ -29,6 +29,27 @@ safe_assert <- function(file_value, orig_value) {
   assertthat::assert_that((is_blank(file_value) && is_blank(orig_value)) || (file_value == gsub("[\n]", "", orig_value)))
 }
 
+safe_see_if <- function(file_value, orig_value, field_name) {
+  assert_result <- assertthat::see_if(is.same(file_value, orig_value, field_name))
+  if(!assert_result){
+    warning(attr(assert_result, "msg"))
+  }
+}
+
+is.same <- function(file_value, orig_value, field_name) {
+  is.empty(file_value) && is.empty(orig_value) ||
+    is.character(file_value) && is.character(orig_value) && (gsub("[\n]", "", file_value) == gsub("[\n]", "", orig_value))
+
+}
+
+is.empty <- function(s) {
+  is.null(s) || s == ""
+}
+
+assertthat::on_failure(is.same) <- function(call, env) {
+  paste0(deparse(call$field_name), ": The updated value is not equal to the passed value.")
+}
+
 is_blank <- function(input){
   return(gtools::invalid(input) || all(input == ""))
 }

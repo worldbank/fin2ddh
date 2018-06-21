@@ -4,10 +4,8 @@
 \alias{add_new_dataset}
 \title{add_new_dataset}
 \usage{
-
-  add_new_dataset(root_url = "http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET",
-  ddh_credentials = list(cookie = dkanr::get_cookie(), token =
-  dkanr::get_token()))
+add_new_dataset(root_url = dkanr::get_url(), ddh_credentials = list(cookie =
+  dkanr::get_cookie(), token = dkanr::get_token()))
 }
 \arguments{
 \item{url}{string: Financa data api}

@@ -50,4 +50,5 @@ devtools::use_data(lookup,
                    finance_lovs,
                    ddh_lovs,
                    ddh_finance_map,
+                   ddh_fields,
                    overwrite = TRUE)

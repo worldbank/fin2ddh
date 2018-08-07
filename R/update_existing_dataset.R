@@ -21,7 +21,7 @@ update_existing_dataset <- function(fin_internal_id, credentials = list(cookie =
   }
 
   # Get raw values from finance portal API and filter to the particular dataset
-  url <- 'http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET'
+  url <- 'http://finances.worldbank.org/api/search/views.json?limitTo=tables&datasetView=DATASET'
   temp <- extract_fin_metadata(url)
   temp <- filter_fin_metadata(temp)
   metadata_lists <- temp$results

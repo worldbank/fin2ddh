@@ -2,7 +2,7 @@
 % Please edit documentation in R/map_fin_metadata.R
 \name{map_fin_metadata}
 \alias{map_fin_metadata}
-\title{map_fin_metadata.R}
+\title{map_fin_metadata}
 \usage{
 map_fin_metadata(metadata_list)
 }

@@ -21,11 +21,11 @@ get_ddh_records_status <- function(root_url = dkanr::get_url(),
   fin_list <- get_fin_datasets_list()
 
   # Combine datasets
+  # TODO make sure this logic is sound, fin_internal_id will always be populated due to join
   full_list <- dplyr::full_join(ddh_list, fin_list, by = "fin_internal_id")
   full_list$status <- NA
   full_list$status[is.na(full_list$ddh_nids)] <- "new"
   full_list$status[!is.na(full_list$ddh_nids) & !is.na(full_list$fin_internal_id)] <- "current"
-  # TODO make sure this logic is sound, fin_internal_id will always be populated due to join
   full_list$status[!is.na(full_list$ddh_nids) & is.na(full_list$fin_internal_updated)] <- "old"
 
   # Identify Current / New / Old datasets based on timestamps

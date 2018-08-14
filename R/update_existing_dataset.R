@@ -4,7 +4,7 @@
 #'
 #' @param fin_internal_id character: Finance portal internal ID of the dataset to be added
 #' @param credentials list: DDH API authentication token and cookie
-#' @param master dataframe: Master lookup table
+#' @param master dataframe: Output of fin2ddh::get_ddh_records_status()
 #' @param root_url character: Root URL to use for the API (Staging or Production)
 #'
 #' @return character
@@ -12,7 +12,7 @@
 #'
 
 update_existing_dataset <- function(fin_internal_id, credentials = list(cookie = dkanr::get_cookie(), token = dkanr::get_token()),
-                                    master, root_url = dkanr::get_url()) {
+                                    master = fin2ddh::get_ddh_records_status(), root_url = dkanr::get_url()) {
 
   if (root_url == ddhconnect:::production_root_url) {
     lkup_tids <- mdlibtoddh::ddh_tid_lovs
@@ -39,7 +39,7 @@ update_existing_dataset <- function(fin_internal_id, credentials = list(cookie =
   # Create JSON dataset
   json_dat <- create_json_dataset(metadata_temp)
   # Push dataset to DDH
-  node_id <- master$ddh_nids[master$md_internal_id == fin_internal_id]
+  node_id <- master$ddh_nids[master$fin_internal_id == fin_internal_id]
   resp_dat <- ddhconnect::update_dataset(credentials = credentials,
                                          nid = node_id,
                                          body = json_dat,

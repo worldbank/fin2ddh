@@ -26,7 +26,7 @@ update_existing_dataset <- function(fin_internal_id, credentials = list(cookie =
   temp <- filter_fin_metadata(temp)
   metadata_lists <- temp$results
   # filter to get the metadata for the paritcular dataset
-  metadata_list <- metadata_lists[sapply(metadata_lists, function(x) x$view$id == fin_internal_id)]
+  metadata_list <- metadata_lists[sapply(metadata_lists, function(x) x$view$id == fin_internal_id)][[1]]
 
   # format raw metadata
   metadata_temp <- fin_to_ddh_keys(metadata_list)

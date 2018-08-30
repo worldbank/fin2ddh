@@ -5,15 +5,15 @@
 \title{update_existing_dataset()}
 \usage{
 update_existing_dataset(fin_internal_id, credentials = list(cookie =
-  dkanr::get_cookie(), token = dkanr::get_token()), master,
-  root_url = dkanr::get_url())
+  dkanr::get_cookie(), token = dkanr::get_token()),
+  master = fin2ddh::get_ddh_records_status(), root_url = dkanr::get_url())
 }
 \arguments{
 \item{fin_internal_id}{character: Finance portal internal ID of the dataset to be added}
 
 \item{credentials}{list: DDH API authentication token and cookie}
 
-\item{master}{dataframe: Master lookup table}
+\item{master}{dataframe: Output of fin2ddh::get_ddh_records_status()}
 
 \item{root_url}{character: Root URL to use for the API (Staging or Production)}
 }

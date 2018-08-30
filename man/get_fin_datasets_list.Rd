@@ -4,7 +4,7 @@
 \alias{get_fin_datasets_list}
 \title{get_fin_datasets_list}
 \usage{
-get_fin_datasets_list(metadata_lists)
+get_fin_datasets_list()
 }
 \arguments{
 \item{metadata_lists}{list: list of metadata for all the datasets in the Finance Portal}

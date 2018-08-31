@@ -1,4 +1,4 @@
-#' update_existing_dataset()
+#' update_existing_dataset
 #'
 #' Update a full finance record in DDH (metadata + resources)
 #'

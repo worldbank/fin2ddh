@@ -4,15 +4,16 @@
 \alias{add_new_dataset}
 \title{add_new_dataset}
 \usage{
-add_new_dataset(root_url = dkanr::get_url(), ddh_credentials = list(cookie =
-  dkanr::get_cookie(), token = dkanr::get_token()))
+add_new_dataset(fin_internal_ids = NULL, root_url = dkanr::get_url(),
+  ddh_credentials = list(cookie = dkanr::get_cookie(), token =
+  dkanr::get_token()))
 }
 \arguments{
-\item{url}{string: Financa data api}
+\item{fin_internal_ids}{vector: list of finanace ids to subset the number of datasets added}
 }
 \value{
 list
 }
 \description{
-Extract specific metadata from the Microdata API JSON response
+Extract specific metadata from the Finance API JSON response
 }

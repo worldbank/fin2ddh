@@ -34,8 +34,11 @@ get_ddh_records_status <- function(root_url = dkanr::get_url(),
   full_list$sync_status[full_list$status == "current" & full_list$time_diff > 3600] <- "out of sync"
   full_list$time_diff <- NULL
 
-  # Identify change of versions
-  full_list$sync_status[full_list$md_refids != full_list$md_internal_refid] <- "out of sync"
+  # Identify duplicates
+  duplicates <- (duplicated(full_list$fin_internal_id) | duplicated(full_list$fin_internal_id, fromLast = TRUE))
+  full_list$duplicate_status <- ifelse(full_list$status == "current" & duplicates, "duplicate", NA)
+  # full_list %>% dplyr::group_by(fin_internal_id) %>% dplyr::summarise(freq = n())
+
   return(full_list)
 }
 

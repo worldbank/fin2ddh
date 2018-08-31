@@ -1,8 +1,8 @@
 #' add_new_dataset
 #'
-#' Extract specific metadata from the Microdata API JSON response
+#' Extract specific metadata from the Finance API JSON response
 #'
-#' @param url string: Financa data api
+#' @param fin_internal_ids vector: list of finanace ids to subset the number of datasets added
 #'
 #' @import jsonlite
 #' @importFrom magrittr "%>%"
@@ -10,7 +10,8 @@
 #' @export
 #'
 
-add_new_dataset <- function(root_url = dkanr::get_url(),
+add_new_dataset <- function(fin_internal_ids = NULL,
+                            root_url = dkanr::get_url(),
                             ddh_credentials = list(cookie = dkanr::get_cookie(), token = dkanr::get_token())) {
   # STEP 1: Collect data from API
   url <- 'http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET'
@@ -19,14 +20,13 @@ add_new_dataset <- function(root_url = dkanr::get_url(),
   # STEP 2: Filter to results in catalog
   temp <- filter_fin_metadata(temp)
 
-  # STEP 3: MAP to keys and flatten
-  # mapped_finance <- temp[["results"]] %>%
-  #   purrr::map(fin_to_ddh_keys) %>%
-  #   purrr::map(add_constant_metadata) %>%
-  #   purrr::map(map_fin_metadata) %>%
-  #   purrr::map(create_json_dataset)
+  if (!is.null(fin_internal_ids)) {
+    new_fin <- unlist(lapply(temp$results, function(x) x$view$id %in% fin_internal_ids), use.names = FALSE)
+    temp$results <- temp$results[new_fin]
+  }
 
- for(i in 1:length(temp$results)){
+  # STEP 3: add new datasets
+  for(i in 1:length(temp$results)){
     print(i)
     metadata_temp <- fin_to_ddh_keys(temp$results[[i]])
     metadata_temp <- add_constant_metadata(metadata_temp)
@@ -52,6 +52,6 @@ add_new_dataset <- function(root_url = dkanr::get_url(),
                          credentials = ddh_credentials,
                          root_url = root_url)
     print(resp_dat$uri)
-  }
 
+  }
 }

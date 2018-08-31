@@ -2,7 +2,7 @@
 % Please edit documentation in R/update_existing_dataset.R
 \name{update_existing_dataset}
 \alias{update_existing_dataset}
-\title{update_existing_dataset()}
+\title{update_existing_dataset}
 \usage{
 update_existing_dataset(fin_internal_id, credentials = list(cookie =
   dkanr::get_cookie(), token = dkanr::get_token()),

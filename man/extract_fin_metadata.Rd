@@ -13,5 +13,5 @@ extract_fin_metadata(url)
 list
 }
 \description{
-Extract specific metadata from the Microdata API JSON response
+Extract specific metadata from the Finance API JSON response
 }

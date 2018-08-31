@@ -1,6 +1,6 @@
 #' extract_fin_metadata
 #'
-#' Extract specific metadata from the Microdata API JSON response
+#' Extract specific metadata from the Finance API JSON response
 #'
 #' @param url string: Financa data api
 #'

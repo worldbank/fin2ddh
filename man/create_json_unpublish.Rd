@@ -6,11 +6,6 @@
 \usage{
 create_json_unpublish()
 }
-\arguments{
-\item{dataset_nid}{character: dataset node id}
-
-\item{json_template}{list: List generated from JSON template}
-}
 \value{
 json
 }

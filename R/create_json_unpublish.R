@@ -2,8 +2,6 @@
 #'
 #' Create a json according to predefined template to unpublish dataset
 #'
-#' @param dataset_nid character: dataset node id
-#' @param json_template list: List generated from JSON template
 #'
 #' @return json
 #' @export

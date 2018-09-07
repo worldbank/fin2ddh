@@ -9,13 +9,11 @@ unpublish_existing_dataset(dataset_nid, credentials = list(cookie =
   root_url = dkanr::get_url())
 }
 \arguments{
+\item{dataset_nid}{string: Finance dataset that needs to be unpublished}
+
 \item{credentials}{list: DDH API authentication token and cookie}
 
 \item{root_url}{character: Root URL to use for the API (Staging or Production)}
-
-\item{metadata_list}{list: Finance portal internal ID of the dataset to be added}
-
-\item{master}{dataframe: Output of fin2ddh::get_ddh_records_status()}
 }
 \value{
 character

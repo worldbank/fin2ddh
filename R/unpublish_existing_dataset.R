@@ -2,9 +2,8 @@
 #'
 #' Update a full finance record in DDH (metadata + resources)
 #'
-#' @param metadata_list list: Finance portal internal ID of the dataset to be added
+#' @param dataset_nid string: Finance dataset that needs to be unpublished
 #' @param credentials list: DDH API authentication token and cookie
-#' @param master dataframe: Output of fin2ddh::get_ddh_records_status()
 #' @param root_url character: Root URL to use for the API (Staging or Production)
 #'
 #' @return character

@@ -11,6 +11,16 @@
 #' @export
 #'
 
-unpublish_existing_dataset <- function(fin_internal_id, credentials = list(cookie = dkanr::get_cookie(), token = dkanr::get_token()),
-                                    master = fin2ddh::get_ddh_records_status(), root_url = dkanr::get_url()) {
+unpublish_existing_dataset <- function(dataset_nid,
+                                       credentials = list(cookie = dkanr::get_cookie(), token = dkanr::get_token()),
+                                       root_url = dkanr::get_url()) {
+
+  unpublish_body <- create_json_unpublish()
+
+  out <- ddhconnect::update_dataset(nid = dataset_nid,
+                                    body = unpublish_body,
+                                    root_url = root_url,
+                                    credentials = credentials)
+
+  return(out)
 }

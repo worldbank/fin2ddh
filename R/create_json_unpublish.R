@@ -9,13 +9,12 @@
 #' @export
 #'
 
-create_json_unpublish <- function(dataset_nid, json_template = mdlibtoddh::json_template_attach) {
+create_json_unpublish <- function() {
 
-  metadata_list <- list()
-  metadata_list$workflow_status <- "unpublished"
-  metadata_list$nid <- dataset_nid
-
-  out <- create_json_dataset(metadata_list)
+  json_template <- jsonlite::fromJSON("{}")
+  json_template$workflow_status <- jsonlite::unbox("unpublished")
+  json_template$status <- jsonlite::unbox("0")
+  out <- jsonlite::toJSON(json_template, pretty = TRUE)
 
   return(out)
 }

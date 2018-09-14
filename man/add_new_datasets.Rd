@@ -4,12 +4,12 @@
 \alias{add_new_datasets}
 \title{add_new_datasets}
 \usage{
-add_new_datasets(fin_metadata, root_url = dkanr::get_url(),
+add_new_datasets(metadata_lists, root_url = dkanr::get_url(),
   ddh_credentials = list(cookie = dkanr::get_cookie(), token =
   dkanr::get_token()))
 }
 \arguments{
-\item{fin_metadata}{list: list of finance metadata}
+\item{metadata_lists}{list: list of finance metadata}
 }
 \value{
 list

@@ -30,7 +30,8 @@ add_new_datasets <- function(metadata_lists,
     json_res <- create_json_resource(metadata_temp)
     resp_res <- ddhconnect::create_resource(credentials = ddh_credentials, body = json_res, root_url = root_url)
 
-    json_attach <- create_json_attach(metadata_list = metadata_temp, resource_nid = resp_res$nid)
+    json_attach <- ddhconnect::create_json_attach(resource_nids = c(resp_res$nid),
+                                                  root_url = root_url)
     resp_attach <- attach_resource_to_dataset(credentials = ddh_credentials,
                                               dataset_nid = resp_dat$nid,
                                               body = json_attach,

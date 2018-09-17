@@ -18,6 +18,9 @@ ddh_finance_map <- readxl::read_excel("./data-raw/ddh_finance_map.xlsx")
 # include fields when stable
 #ddh_fields <- ddhconnect::get_fields(root_url = root_url)
 
+ddh_schema_finance_dataset <- jsonlite::fromJSON("./data-raw/ddh_schema_finance_dataset.json")
+ddh_schema_finance_resource <- jsonlite::fromJSON("./data-raw/ddh_schema_finance_dataset.json")
+
 # STEP 2: Merge data ------------------------------------------------------
 lookup <- ddh_finance_map %>%
               full_join(ddh_lovs_df, by = "machine_name") %>%
@@ -50,4 +53,8 @@ devtools::use_data(lookup,
                    finance_lovs,
                    ddh_lovs,
                    ddh_finance_map,
+                   overwrite = TRUE)
+
+devtools::use_data(ddh_schema_finance_dataset,
+                   ddh_schema_finance_resource,
                    overwrite = TRUE)

@@ -19,7 +19,7 @@ ddh_finance_map <- readxl::read_excel("./data-raw/ddh_finance_map.xlsx")
 #ddh_fields <- ddhconnect::get_fields(root_url = root_url)
 
 ddh_schema_finance_dataset <- jsonlite::fromJSON("./data-raw/ddh_schema_finance_dataset.json")
-ddh_schema_finance_resource <- jsonlite::fromJSON("./data-raw/ddh_schema_finance_dataset.json")
+ddh_schema_finance_resource <- jsonlite::fromJSON("./data-raw/ddh_schema_finance_resource.json")
 
 # STEP 2: Merge data ------------------------------------------------------
 lookup <- ddh_finance_map %>%

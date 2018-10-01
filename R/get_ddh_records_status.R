@@ -10,8 +10,8 @@
 #'
 
 get_ddh_records_status <- function(root_url = dkanr::get_url(),
-                                   credentials = list(cookie = dkanr::get_cookie(), token = dkanr::get_token())) {
-
+                                   credentials = list(cookie = dkanr::get_cookie(),
+                                                      token = dkanr::get_token())) {
   # ddh
   # subset the ddh catalog for the finance datasets
   ddh_list <- get_finance_datasets(root_url = root_url, credentials = credentials)
@@ -45,7 +45,8 @@ get_ddh_records_status <- function(root_url = dkanr::get_url(),
 
 
 get_finance_datasets <- function(root_url = dkanr::get_url(),
-                                 credentials = list(cookie = dkanr::get_cookie(), token = dkanr::get_token())) {
+                                 credentials = list(cookie = dkanr::get_cookie(),
+                                                    token = dkanr::get_token())) {
   finance_datasets <- ddhconnect::search_catalog(
     fields = c(
       "nid",

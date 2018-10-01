@@ -7,11 +7,9 @@
 add_link_to_resources(metadata_list, category)
 }
 \arguments{
-\item{metadata_list}{list: Flattened list of metadata from the Microdata API}
+\item{metadata_list}{list: Flattened list of metadata from the Fianace API}
 
-\item{md_internal_id}{character: Microdata internal ID}
-
-\item{master}{data.frame: Output of mdlibtoddh::get_ddh_records_status()}
+\item{category}{string: finance category retrieved from metadata$view$category}
 }
 \value{
 list

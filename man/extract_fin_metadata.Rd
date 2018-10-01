@@ -4,10 +4,7 @@
 \alias{extract_fin_metadata}
 \title{extract_fin_metadata}
 \usage{
-extract_fin_metadata(url)
-}
-\arguments{
-\item{url}{string: Financa data api}
+extract_fin_metadata()
 }
 \value{
 list

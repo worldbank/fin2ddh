@@ -2,18 +2,21 @@
 #'
 #' Test the metadata values of the dataset tranferred to DDH
 #'
-#' @param nid character: The dataset node id
+#' @param dataset_nid character: The dataset node id
 #' @param metadata_list list: List of metatadata values
-#' @param credentials list: object returned by the get_credentials() function
 #' @param root_url character: API root URL
+#' @param credentials list: object returned by the get_credentials() function
 #'
 #' @return character
 #' @export
 #'
 
-test_created_dataset <- function(nid, metadata_list, credentials, root_url = production_root_url) {
+test_created_dataset <- function(dataset_nid, metadata_list,
+                                 root_url = dkanr::get_url(),
+                                 credentials = list(cookie = dkanr::get_cookie(),
+                                                    token = dkanr::get_token())) {
 
-  node_metadata = ddhconnect::get_metadata(nid, root_url, credentials)
+  node_metadata = ddhconnect::get_metadata(dataset_nid, root_url, credentials)
 
   # for later looping
   #node_metadata$[[machine_name]]$und$value

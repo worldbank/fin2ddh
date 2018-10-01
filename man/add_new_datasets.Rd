@@ -5,11 +5,15 @@
 \title{add_new_datasets}
 \usage{
 add_new_datasets(metadata_lists, root_url = dkanr::get_url(),
-  ddh_credentials = list(cookie = dkanr::get_cookie(), token =
+  credentials = list(cookie = dkanr::get_cookie(), token =
   dkanr::get_token()))
 }
 \arguments{
-\item{metadata_lists}{list: list of finance metadata}
+\item{metadata_lists}{list: list of finance metadata, from get_fin_datasets_metadata()}
+
+\item{root_url}{character: API root URL}
+
+\item{credentials}{list: object returned by the dkanr::get_credentials() function}
 }
 \value{
 list

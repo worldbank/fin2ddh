@@ -3,16 +3,19 @@
 #' Update a full finance record in DDH (metadata + resources)
 #'
 #' @param fin_internal_id character: Finance portal internal ID of the dataset to be added
-#' @param credentials list: DDH API authentication token and cookie
 #' @param master dataframe: Output of fin2ddh::get_ddh_records_status()
 #' @param root_url character: Root URL to use for the API (Staging or Production)
+#' @param credentials list: DDH API authentication token and cookie
 #'
 #' @return character
 #' @export
 #'
 
-update_existing_dataset <- function(fin_internal_id, credentials = list(cookie = dkanr::get_cookie(), token = dkanr::get_token()),
-                                    master = fin2ddh::get_ddh_records_status(), root_url = dkanr::get_url()) {
+update_existing_dataset <- function(fin_internal_id,
+                                    master = fin2ddh::get_ddh_records_status(),
+                                    root_url = dkanr::get_url(),
+                                    credentials = list(cookie = dkanr::get_cookie(),
+                                                       token = dkanr::get_token())) {
 
   if (root_url == ddhconnect:::production_root_url) {
     lkup_tids <- mdlibtoddh::ddh_tid_lovs
@@ -40,21 +43,21 @@ update_existing_dataset <- function(fin_internal_id, credentials = list(cookie =
   json_dat <- create_json_dataset(metadata_temp)
   # Push dataset to DDH
   node_id <- master$ddh_nids[master$fin_internal_id == fin_internal_id]
-  resp_dat <- ddhconnect::update_dataset(credentials = credentials,
-                                         nid = node_id,
+  resp_dat <- ddhconnect::update_dataset(nid = node_id,
                                          body = json_dat,
-                                         root_url = root_url)
+                                         root_url = root_url,
+                                         credentials = credentials)
 
   # Create JSON resource
-  nid_res <- ddhconnect::get_resource_nid(credentials = credentials,
-                                          nid = resp_dat$nid,
-                                          root_url = root_url)
+  nid_res <- ddhconnect::get_resource_nid(nid = resp_dat$nid,
+                                          root_url = root_url,
+                                          credentials = credentials)
   json_res <- create_json_resource(metadata_temp)
   # push resource to DDH
-  resp_res <- ddhconnect::update_dataset(credentials = credentials,
-                                         nid = nid_res,
+  resp_res <- ddhconnect::update_dataset(nid = nid_res,
                                          body = json_res,
-                                         root_url = root_url)
+                                         root_url = root_url,
+                                         credentials = credentials)
 
 
   return(resp_dat$uri)

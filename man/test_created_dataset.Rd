@@ -15,7 +15,7 @@ test_created_dataset(dataset_nid, metadata_list, root_url = dkanr::get_url(),
 
 \item{root_url}{character: API root URL}
 
-\item{credentials}{list: object returned by the get_credentials() function}
+\item{credentials}{list: list with dkanr::get_cookie() and dkanr::get_token()}
 }
 \value{
 character

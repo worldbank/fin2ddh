@@ -5,7 +5,7 @@
 #' @param dataset_nid character: The dataset node id
 #' @param metadata_list list: List of metatadata values
 #' @param root_url character: API root URL
-#' @param credentials list: object returned by the get_credentials() function
+#' @param credentials list: list with dkanr::get_cookie() and dkanr::get_token()
 #'
 #' @return character
 #' @export

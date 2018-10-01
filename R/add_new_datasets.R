@@ -16,8 +16,8 @@ add_new_datasets <- function(metadata_lists,
 
   # add new datasets
   for(i in 1:length(metadata_lists)){
-    print(i)
-    metadata_temp <- fin_to_ddh_keys(metadata_lists[[i]])
+    # print(i)
+    metadata_temp <- fin_to_ddh_keys(metadata_lists[[i]]) 
     metadata_temp <- add_constant_metadata(metadata_temp)
     metadata_temp <- map_fin_metadata(metadata_temp)
 

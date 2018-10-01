@@ -1,5 +1,5 @@
 #' fin_to_ddh_keys
-#' Extract specific metadata from the Microdata API JSON response
+#' Extract specific metadata from the Finance API JSON response
 #'
 #' @param metadata_in list: The output of mdlibconnect::get_survey_metadata
 #' @param metadata_out list: Package object: mdlibtoddh::md_placeholder
@@ -45,7 +45,7 @@ fin_to_ddh_keys <- function(metadata_in,
   metadata_out[["field_wbddh_end_date"]] <- date_list$end_date
   metadata_out[["field_wbddh_modified_date"]] <- date_list$modified_date
   metadata_out[["field_wbddh_release_date"]] <- date_list$release_date
-  
+
 
   return(metadata_out)
 }

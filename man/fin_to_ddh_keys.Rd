@@ -3,7 +3,7 @@
 \name{fin_to_ddh_keys}
 \alias{fin_to_ddh_keys}
 \title{fin_to_ddh_keys
-Extract specific metadata from the Microdata API JSON response}
+Extract specific metadata from the Finance API JSON response}
 \usage{
 fin_to_ddh_keys(metadata_in, metadata_out = mdlibtoddh::md_placeholder,
   lookup = fin2ddh::lookup)
@@ -20,5 +20,5 @@ list
 }
 \description{
 fin_to_ddh_keys
-Extract specific metadata from the Microdata API JSON response
+Extract specific metadata from the Finance API JSON response
 }

@@ -2,16 +2,15 @@
 % Please edit documentation in R/get_fin_datasets_list.R
 \name{get_fin_datasets_list}
 \alias{get_fin_datasets_list}
-\title{get_fin_datasets_list}
+\title{get_fin_datasets_list
+return all the finance datasets with updated time}
 \usage{
 get_fin_datasets_list()
-}
-\arguments{
-\item{metadata_lists}{list: list of metadata for all the datasets in the Finance Portal}
 }
 \value{
 data.frame
 }
 \description{
 get_fin_datasets_list
+return all the finance datasets with updated time
 }

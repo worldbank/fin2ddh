@@ -1,8 +1,7 @@
 #' add_link_to_resources
 #'
-#' @param metadata_list list: Flattened list of metadata from the Microdata API
-#' @param md_internal_id character: Microdata internal ID
-#' @param master data.frame: Output of mdlibtoddh::get_ddh_records_status()
+#' @param metadata_list list: Flattened list of metadata from the Fianace API
+#' @param category string: finance category retrieved from metadata$view$category
 #'
 #' @return list
 #' @export

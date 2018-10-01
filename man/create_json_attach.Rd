@@ -4,13 +4,13 @@
 \alias{create_json_attach}
 \title{create_json_attach}
 \usage{
-create_json_attach(metadata_list, resource_nid,
+create_json_attach(resource_nid, metadata_list,
   json_template = mdlibtoddh::json_template_attach)
 }
 \arguments{
-\item{metadata_list}{list: List of metatadata values}
-
 \item{resource_nid}{character: resource node id}
+
+\item{metadata_list}{list: List of metatadata values}
 
 \item{json_template}{list: List generated from JSON template}
 }

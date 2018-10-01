@@ -8,8 +8,8 @@
 #' @export
 
 get_fin_datasets_metadata <- function(fin_internal_ids = NULL) {
-  url <- "http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET"
-  temp <- extract_fin_metadata(url)
+  # url <- "http://finances.worldbank.org//api/search/views.json?limitTo=tables&datasetView=DATASET"
+  temp <- extract_fin_metadata()
   temp <- filter_fin_metadata(temp)
 
   if (!is.null(fin_internal_ids)) {

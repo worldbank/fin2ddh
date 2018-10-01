@@ -4,16 +4,16 @@
 \alias{unpublish_existing_dataset}
 \title{unpublish_existing_dataset}
 \usage{
-unpublish_existing_dataset(dataset_nid, credentials = list(cookie =
-  dkanr::get_cookie(), token = dkanr::get_token()),
-  root_url = dkanr::get_url())
+unpublish_existing_dataset(dataset_nid, root_url = dkanr::get_url(),
+  credentials = list(cookie = dkanr::get_cookie(), token =
+  dkanr::get_token()))
 }
 \arguments{
 \item{dataset_nid}{string: Finance dataset that needs to be unpublished}
 
-\item{credentials}{list: DDH API authentication token and cookie}
-
 \item{root_url}{character: Root URL to use for the API (Staging or Production)}
+
+\item{credentials}{list: DDH API authentication token and cookie}
 }
 \value{
 character

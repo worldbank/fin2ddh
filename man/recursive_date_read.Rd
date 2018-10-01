@@ -7,7 +7,7 @@
 recursive_date_read(metadata_in)
 }
 \arguments{
-\item{metadata_in}{list: a dataset extracted from the finances data portal}
+\item{metadata_in}{list: a dataset extracted using get_fin_datasets_metadata()}
 }
 \value{
 list

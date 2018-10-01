@@ -7,11 +7,11 @@
 map_fin_metadata(metadata_list)
 }
 \arguments{
-\item{metadata}{list:}
+\item{metadata_list}{list: output of add_constant_metadata()}
 }
 \value{
 list
 }
 \description{
-Extract specific metadata from the Microdata API JSON response
+Extract specific metadata from the Finance API JSON response
 }

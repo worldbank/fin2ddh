@@ -7,16 +7,11 @@
 add_constant_metadata(metadata_list)
 }
 \arguments{
-\item{metadata_list}{list: List returned by flatten_md_metadata()}
+\item{metadata_list}{list: List returned by fin_to_ddh_keys(), used in add_new_datasets()}
 }
 \value{
 list
 }
 \description{
-Add metadata that have constant values across records (not pulled from Microdata API)
-Currently adds values for the following fields:
-field_wbddh_languages_supported ('English')
-field_wbddh_data_type ('Microdata')
-field_contact_email ('microdata@worldbank.org')
-field_ddh_harvest_src ("Microdata")
+Add metadata that have constant values across records (not pulled from the Finance API)
 }

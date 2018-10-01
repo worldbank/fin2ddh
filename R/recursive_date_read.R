@@ -1,6 +1,6 @@
 #' read values from the date fields which require a recursive read
 #'
-#' @param metadata_in list: a dataset extracted from the finances data portal
+#' @param metadata_in list: a dataset extracted using get_fin_datasets_metadata()
 #'
 #' @import jsonlite
 #' @importFrom gtools invalid
@@ -32,7 +32,7 @@ recursive_date_read <- function(metadata_in) {
     }
     #return(list(start_date = start_date, end_date = end_date))
   }
-  return(list(start_date = start_date, 
+  return(list(start_date = start_date,
               end_date = end_date,
               modified_date = modified_date,
               release_date = release_date))

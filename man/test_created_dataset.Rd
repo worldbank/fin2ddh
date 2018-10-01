@@ -4,17 +4,18 @@
 \alias{test_created_dataset}
 \title{test_created_dataset}
 \usage{
-test_created_dataset(nid, metadata_list, credentials,
-  root_url = production_root_url)
+test_created_dataset(dataset_nid, metadata_list, root_url = dkanr::get_url(),
+  credentials = list(cookie = dkanr::get_cookie(), token =
+  dkanr::get_token()))
 }
 \arguments{
-\item{nid}{character: The dataset node id}
+\item{dataset_nid}{character: The dataset node id}
 
 \item{metadata_list}{list: List of metatadata values}
 
-\item{credentials}{list: object returned by the get_credentials() function}
-
 \item{root_url}{character: API root URL}
+
+\item{credentials}{list: list with dkanr::get_cookie() and dkanr::get_token()}
 }
 \value{
 character

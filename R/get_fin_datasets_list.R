@@ -1,6 +1,6 @@
 #' get_fin_datasets_list
+#' return all the finance datasets with updated time
 #'
-#' @param metadata_lists list: list of metadata for all the datasets in the Finance Portal
 #'
 #' @import purrr
 #' @return data.frame

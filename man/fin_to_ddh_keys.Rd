@@ -9,11 +9,11 @@ fin_to_ddh_keys(metadata_in, metadata_out = mdlibtoddh::md_placeholder,
   lookup = fin2ddh::lookup)
 }
 \arguments{
-\item{metadata_in}{list: The output of mdlibconnect::get_survey_metadata}
+\item{metadata_in}{list: The output of get_fin_datasets_metadata()}
 
 \item{metadata_out}{list: Package object: mdlibtoddh::md_placeholder}
 
-\item{lookup}{data.frame: Package object: mdlibtoddh::lookup}
+\item{lookup}{data.frame: Package object: fin2ddh::lookup}
 }
 \value{
 list

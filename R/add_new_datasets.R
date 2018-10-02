@@ -20,31 +20,39 @@ add_new_datasets <- function(metadata_lists,
   # add new datasets
   for(i in 1:length(metadata_lists)){
     # print(i)
+    # format raw metadata
     metadata_temp <- fin_to_ddh_keys(metadata_lists[[i]])
-    metadata_temp <- add_constant_metadata(metadata_temp)
+    metadata_temp <- add_constant_metadata_dataset(metadata_temp)
     metadata_temp <- map_fin_metadata(metadata_temp)
 
     category <- metadata_lists[[i]]$view$category
     metadata_temp <- add_link_to_resources(metadata_temp, category)
 
-    json_dat <- create_json_dataset(metadata_temp)
+    # create dataset
+    json_dat <- ddhconnect::create_json_body(values = metadata_temp,
+                                             node_type = "dataset",
+                                             root_url = root_url)
     resp_dat <- ddhconnect::create_dataset(body = json_dat,
                                            root_url = root_url,
                                            credentials = credentials)
 
-    json_res <- create_json_resource(metadata_temp)
+    # create resource
+    metadata_temp_resource <- add_constant_metadata_resource(metadata_temp)
+    json_res <- ddhconnect::create_json_body(values = metadata_temp_resource,
+                                             node_type = "resource",
+                                             root_url = root_url)
     resp_res <- ddhconnect::create_resource(body = json_res,
                                             root_url = root_url,
                                             credentials = credentials)
 
+    # attach dataset to resource
     json_attach <- ddhconnect::create_json_attach(resource_nids = c(resp_res$nid),
                                                   root_url = root_url)
-    resp_attach <- attach_resource_to_dataset(dataset_nid = resp_dat$nid,
-                                              body = json_attach,
-                                              root_url = root_url,
-                                              credentials = credentials)
-
-    test_created_dataset(nid = resp_dat$nid,
+    resp_attach <- ddhconnect::attach_resources_to_dataset(dataset_nid = resp_dat$nid,
+                                                           resource_nids = c(resp_res$nid),
+                                                           root_url = root_url,
+                                                           credentials = credentials)
+    test_created_dataset(dataset_nid = resp_dat$nid,
                          metadata_list = metadata_temp,
                          root_url = root_url,
                          credentials = credentials)

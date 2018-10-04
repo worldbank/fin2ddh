@@ -39,9 +39,14 @@ update_existing_dataset <- function(metadata_lists,
 
     # create resource
     metadata_temp_resource <- add_constant_metadata_resource(metadata_temp)
-    resource_nid <- ddhconnect::get_resource_nid(nid = resp_dat$nid,
-                                                 root_url = root_url,
-                                                 credentials = credentials)
+    # resource_nid <- dkanr::get_resource_nids(nid = resp_dat$nid,
+    #                                              root_url = root_url,
+    #                                              credentials = credentials)
+    metadata_dataset <- dkanr::retrieve_node(nid = resp_dat$nid,
+                                             url = root_url,
+                                             as = "list",
+                                             credentials = credentials)
+    resource_nid <- unlist(dkanr::get_resource_nids(metadata_dataset))
     json_res <- ddhconnect::create_json_body(values = metadata_temp_resource,
                                              node_type = "resource",
                                              root_url = root_url)

@@ -1,4 +1,4 @@
-#' update_existing_dataset
+#' update_existing_datasets
 #'
 #' Update a full finance record in DDH (metadata + resources)
 #'
@@ -11,11 +11,11 @@
 #' @export
 #'
 
-update_existing_dataset <- function(metadata_lists,
-                                    master = fin2ddh::get_ddh_records_status(),
-                                    root_url = dkanr::get_url(),
-                                    credentials = list(cookie = dkanr::get_cookie(),
-                                                       token = dkanr::get_token())) {
+update_existing_datasets <- function(metadata_lists,
+                                     master = fin2ddh::get_ddh_records_status(),
+                                     root_url = dkanr::get_url(),
+                                     credentials = list(cookie = dkanr::get_cookie(),
+                                                        token = dkanr::get_token())) {
   # update existing datasets
   for(i in 1:length(metadata_lists)){
     # print(i)

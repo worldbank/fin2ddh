@@ -35,9 +35,9 @@ get_ddh_records_status <- function(root_url = dkanr::get_url(),
   full_list$time_diff <- NULL
 
   # Identify duplicates
-  duplicates <- (duplicated(full_list$fin_internal_id) | duplicated(full_list$fin_internal_id, fromLast = TRUE))
-  full_list$duplicate_status <- ifelse(full_list$status == "current" & duplicates, "duplicate", NA)
-  # full_list %>% dplyr::group_by(fin_internal_id) %>% dplyr::summarise(freq = n())
+  full_list$oldest_timestamp <- ave(full_list$ddh_created, full_list$fin_internal_id, FUN = min)
+  full_list$duplicate_status <- ifelse(full_list$ddh_created == full_list$oldest_timestamp, "original", "duplicate")
+  full_list$oldest_timestamp <- NULL
 
   return(full_list)
 }
@@ -52,7 +52,8 @@ get_finance_datasets <- function(root_url = dkanr::get_url(),
       "nid",
       "field_ddh_harvest_src",
       "field_ddh_harvest_sys_id",
-      "field_wbddh_modified_date"
+      "field_wbddh_modified_date",
+      "created"
     ),
     filters = c(
       "field_ddh_harvest_src" = "1015",
@@ -63,9 +64,10 @@ get_finance_datasets <- function(root_url = dkanr::get_url(),
   )
 
   ddh_nids <- as.character(purrr::map(finance_datasets, "nid"))
+  ddh_created <- as.character(purrr::map(finance_datasets, "created"))
   ddh_updated <- as.character(purrr::map(finance_datasets, function(x) x[["field_wbddh_modified_date"]][["und"]][[1]][["value"]]))
   fin_internal_id <- as.character(purrr::map(finance_datasets, function(x) x[["field_ddh_harvest_sys_id"]][["und"]][[1]][["value"]]))
 
-  out <- data.frame(ddh_nids, ddh_updated, fin_internal_id, stringsAsFactors = FALSE)
+  out <- data.frame(ddh_nids, ddh_created, ddh_updated, fin_internal_id, stringsAsFactors = FALSE)
   return(out)
 }

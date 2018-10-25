@@ -17,11 +17,11 @@ add_new_dataset <- function(metadata_list,
                                               token = dkanr::get_token())) {
 
     # format raw metadata
-    metadata_temp <- fin_to_ddh_keys(metadata_list[[1]])
+    metadata_temp <- fin_to_ddh_keys(metadata_list)
     metadata_temp <- add_constant_metadata_dataset(metadata_temp)
     metadata_temp <- map_fin_metadata(metadata_temp)
 
-    category <- metadata_list[[i]]$view$category
+    category <- metadata_list$view$category
     metadata_temp <- add_link_to_resources(metadata_temp, category)
 
     # create dataset

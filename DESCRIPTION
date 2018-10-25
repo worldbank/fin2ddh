@@ -7,5 +7,15 @@ Depends: R (>= 3.3)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports: ddhconnect,
+  jsonlite,
+  magrittr,
+  hash,
+  purrr,
+  dplyr,
+  gtools,
+  stringr,
+  assertthat,
+  lubridate
 Suggests: testthat
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0

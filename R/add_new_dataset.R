@@ -52,5 +52,5 @@ add_new_dataset <- function(metadata_list,
                          metadata_list = metadata_temp,
                          root_url = root_url,
                          credentials = credentials)
-    print(resp_dat$uri)
+    print(resp_dat)
   }

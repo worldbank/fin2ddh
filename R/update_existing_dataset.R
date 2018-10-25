@@ -18,7 +18,7 @@ update_existing_dataset <- function(metadata_list,
                                                        token = dkanr::get_token())) {
 
   # format raw metadata
-  metadata_temp <- fin_to_ddh_keys(metadata_list)
+  metadata_temp <- fin_to_ddh_keys(metadata_list[[1]])
   metadata_temp <- add_constant_metadata_dataset(metadata_temp)
   metadata_temp <- map_fin_metadata(metadata_temp)
 

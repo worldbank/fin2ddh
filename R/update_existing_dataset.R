@@ -2,7 +2,7 @@
 #'
 #' Update a full finance record in DDH (metadata + resources)
 #'
-#' @param metadata_lists list: list of finance metadata, from get_fin_datasets_metadata()
+#' @param metadata_list list: list of finance metadata, from get_fin_datasets_metadata()
 #' @param master dataframe: Output of fin2ddh::get_ddh_records_status()
 #' @param root_url character: API root URL
 #' @param credentials list: object returned by the dkanr::get_credentials() function
@@ -22,11 +22,11 @@ update_existing_dataset <- function(metadata_list,
   metadata_temp <- add_constant_metadata_dataset(metadata_temp)
   metadata_temp <- map_fin_metadata(metadata_temp)
 
-  category <- metadata_lists[[i]]$view$category
+  category <- metadata_list[[i]]$view$category
   metadata_temp <- add_link_to_resources(metadata_temp, category)
 
   # create dataset
-  dataset_nid <- master[master$fin_internal_id == metadata_lists[[i]]$view$id, "ddh_nids"]
+  dataset_nid <- master[master$fin_internal_id == metadata_list[[i]]$view$id, "ddh_nids"]
   json_dat <- ddhconnect::create_json_body(values = metadata_temp,
                                            node_type = "dataset",
                                            root_url = root_url)

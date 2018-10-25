@@ -4,7 +4,8 @@
 \alias{format_metadata}
 \title{format_metadata}
 \usage{
-format_metadata(metadata_in, timestamp_fields = c("field_wbddh_modified_date",
+format_metadata(metadata_in,
+  timestamp_fields = c("field_wbddh_modified_date",
   "field_wbddh_release_date"), date_fields = c("field_wbddh_start_date",
   "field_wbddh"))
 }

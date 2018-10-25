@@ -1,27 +1,23 @@
-#' add_new_datasets
+#' add_new_dataset
 #'
 #' Extract specific metadata from the Finance API JSON response
 #'
-#' @param metadata_lists list: list of finance metadata, from get_fin_datasets_metadata()
+#' @param metadata_list list: list with one finance dataset's metadata, from get_fin_datasets_metadata()
 #' @param root_url character: API root URL
 #' @param credentials list: object returned by the dkanr::get_credentials() function
 #'
 #' @import jsonlite
-#' @importFrom magrittr "%>%"
 #' @return list
 #' @export
 #'
 
-add_new_datasets <- function(metadata_lists,
-                             root_url = dkanr::get_url(),
-                             credentials = list(cookie = dkanr::get_cookie(),
-                                                token = dkanr::get_token())) {
+add_new_dataset <- function(metadata_list,
+                            root_url = dkanr::get_url(),
+                            credentials = list(cookie = dkanr::get_cookie(),
+                                              token = dkanr::get_token())) {
 
-  # add new datasets
-  for(i in 1:length(metadata_lists)){
-    # print(i)
     # format raw metadata
-    metadata_temp <- fin_to_ddh_keys(metadata_lists[[i]])
+    metadata_temp <- fin_to_ddh_keys(metadata_lists)
     metadata_temp <- add_constant_metadata_dataset(metadata_temp)
     metadata_temp <- map_fin_metadata(metadata_temp)
 
@@ -58,4 +54,3 @@ add_new_datasets <- function(metadata_lists,
                          credentials = credentials)
     print(resp_dat$uri)
   }
-}

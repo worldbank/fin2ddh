@@ -7,6 +7,7 @@
 #'
 #' @importFrom hash hash
 #' @importFrom magrittr "%>%"
+#' @import purrr
 #' @return list
 #'
 #' @export

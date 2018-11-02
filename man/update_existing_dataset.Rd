@@ -10,13 +10,13 @@ update_existing_dataset(metadata_list,
   dkanr::get_cookie(), token = dkanr::get_token()))
 }
 \arguments{
+\item{metadata_list}{list: list of finance metadata, from get_fin_datasets_metadata()}
+
 \item{master}{dataframe: Output of fin2ddh::get_ddh_records_status()}
 
 \item{root_url}{character: API root URL}
 
 \item{credentials}{list: object returned by the dkanr::get_credentials() function}
-
-\item{metadata_lists}{list: list of finance metadata, from get_fin_datasets_metadata()}
 }
 \value{
 character

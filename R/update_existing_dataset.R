@@ -49,7 +49,7 @@ update_existing_dataset <- function(metadata_list,
                                           root_url = root_url,
                                           credentials = credentials)
 
-  test_created_dataset(dataset_nid = resp_dat$nid,
+  test_created_dataset(dataset_metadata = metadata_dataset,
                        metadata_list = metadata_temp,
                        root_url = root_url,
                        credentials = credentials)

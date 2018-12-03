@@ -27,9 +27,11 @@ update_existing_dataset <- function(metadata_list,
 
   # create dataset
   dataset_nid <- master[master$fin_internal_id == metadata_list$view$id, "ddh_nids"]
-  json_dat <- ddhconnect::create_json_body(values = metadata_temp,
-                                           node_type = "dataset",
-                                           root_url = root_url)
+  json_dat <- ddhconnect::create_json_dataset(values = metadata_temp,
+                                              publication_status = "published",
+                                              ddh_fields = ddh_fields,
+                                              lovs = lovs,
+                                              root_url = root_url)
   resp_dat <- ddhconnect::update_dataset(nid = dataset_nid,
                                          body = json_dat,
                                          root_url = root_url,
@@ -41,9 +43,11 @@ update_existing_dataset <- function(metadata_list,
                                                root_url = root_url,
                                                credentials = credentials)
   resource_nid <- unlist(ddhconnect::get_resource_nids(metadata_dataset))
-  json_res <- ddhconnect::create_json_body(values = metadata_temp_resource,
-                                           node_type = "resource",
-                                           root_url = root_url)
+  json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
+                                               publication_status = "published",
+                                               ddh_fields = ddh_fields,
+                                               lovs = lovs,
+                                               root_url = root_url)
   resp_res <- ddhconnect::update_resource(nid = resource_nid,
                                           body = json_res,
                                           root_url = root_url,

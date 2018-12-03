@@ -13,6 +13,8 @@
 
 add_new_dataset <- function(metadata_list,
                             root_url = dkanr::get_url(),
+                            ddh_fields = ddhconnect::get_fields(),
+                            lovs = ddhconnect::get_lovs(),
                             credentials = list(cookie = dkanr::get_cookie(),
                                               token = dkanr::get_token())) {
 
@@ -25,18 +27,22 @@ add_new_dataset <- function(metadata_list,
     metadata_temp <- add_link_to_resources(metadata_temp, category)
 
     # create dataset
-    json_dat <- ddhconnect::create_json_body(values = metadata_temp,
-                                             node_type = "dataset",
-                                             root_url = root_url)
+    json_dat <- ddhconnect::create_json_dataset(values = metadata_temp,
+                                                publication_status = "published",
+                                                ddh_fields = ddh_fields,
+                                                lovs = lovs,
+                                                root_url = root_url)
     resp_dat <- ddhconnect::create_dataset(body = json_dat,
                                            root_url = root_url,
                                            credentials = credentials)
 
     # create resource
     metadata_temp_resource <- add_constant_metadata_resource(metadata_temp)
-    json_res <- ddhconnect::create_json_body(values = metadata_temp_resource,
-                                             node_type = "resource",
-                                             root_url = root_url)
+    json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
+                                                 publication_status = "published",
+                                                 ddh_fields = ddh_fields,
+                                                 lovs = lovs,
+                                                 root_url = root_url)
     resp_res <- ddhconnect::create_resource(body = json_res,
                                             root_url = root_url,
                                             credentials = credentials)

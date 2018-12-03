@@ -4,12 +4,17 @@
 \alias{add_new_dataset}
 \title{add_new_dataset}
 \usage{
-add_new_dataset(metadata_list, root_url = dkanr::get_url(),
+add_new_dataset(metadata_list, ddh_fields = ddhconnect::get_fields(),
+  lovs = ddhconnect::get_lovs(), root_url = dkanr::get_url(),
   credentials = list(cookie = dkanr::get_cookie(), token =
   dkanr::get_token()))
 }
 \arguments{
 \item{metadata_list}{list: list with one finance dataset's metadata, from get_fin_datasets_metadata()}
+
+\item{ddh_fields}{dataframe: table of all the data catalog fields by node type}
+
+\item{lovs}{dataframe: lookup table of the data catalog tids and values}
 
 \item{root_url}{character: API root URL}
 

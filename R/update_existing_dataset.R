@@ -4,6 +4,8 @@
 #'
 #' @param metadata_list list: list of finance metadata, from get_fin_datasets_metadata()
 #' @param master dataframe: Output of fin2ddh::get_ddh_records_status()
+#' @param ddh_fields dataframe: table of all the data catalog fields by node type
+#' @param lovs dataframe: lookup table of the data catalog tids and values
 #' @param root_url character: API root URL
 #' @param credentials list: object returned by the dkanr::get_credentials() function
 #'
@@ -13,6 +15,8 @@
 
 update_existing_dataset <- function(metadata_list,
                                     master = fin2ddh::get_ddh_records_status(),
+                                    ddh_fields = ddhconnect::get_fields(),
+                                    lovs = ddhconnect::get_lovs(),
                                     root_url = dkanr::get_url(),
                                     credentials = list(cookie = dkanr::get_cookie(),
                                                        token = dkanr::get_token())) {

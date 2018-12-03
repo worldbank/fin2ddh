@@ -30,35 +30,38 @@ update_existing_dataset <- function(metadata_list,
   metadata_temp <- add_link_to_resources(metadata_temp, category)
 
   # create dataset
-  dataset_nid <- master[master$fin_internal_id == metadata_list$view$id, "ddh_nids"]
-  json_dat <- ddhconnect::create_json_dataset(values = metadata_temp,
+  metadata_temp_dataset <- filter_dataset_fields(metadata_temp, ddh_fields)
+  json_dat <- ddhconnect::create_json_dataset(values = metadata_temp_dataset,
                                               publication_status = "published",
                                               ddh_fields = ddh_fields,
                                               lovs = lovs,
                                               root_url = root_url)
+  dataset_nid <- master[master$fin_internal_id == metadata_list$view$id, "ddh_nids"]
   resp_dat <- ddhconnect::update_dataset(nid = dataset_nid,
                                          body = json_dat,
                                          root_url = root_url,
                                          credentials = credentials)
 
   # create resource
-  metadata_temp_resource <- add_constant_metadata_resource(metadata_temp)
-  metadata_dataset <- ddhconnect::get_metadata(nid = resp_dat$nid,
-                                               root_url = root_url,
-                                               credentials = credentials)
-  resource_nid <- unlist(ddhconnect::get_resource_nids(metadata_dataset))
+  metadata_temp <- add_constant_metadata_resource(metadata_temp)
+  metadata_temp_resource <- filter_resource_fields(metadata_temp, ddh_fields)
   json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
                                                publication_status = "published",
                                                ddh_fields = ddh_fields,
                                                lovs = lovs,
                                                root_url = root_url)
+
+  metadata_dataset <- ddhconnect::get_metadata(nid = resp_dat$nid,
+                                               root_url = root_url,
+                                               credentials = credentials)
+  resource_nid <- unlist(ddhconnect::get_resource_nids(metadata_dataset))
   resp_res <- ddhconnect::update_resource(nid = resource_nid,
                                           body = json_res,
                                           root_url = root_url,
                                           credentials = credentials)
 
   test_created_dataset(dataset_metadata = metadata_dataset,
-                       metadata_list = metadata_temp,
+                       metadata_list = metadata_temp_dataset,
                        root_url = root_url,
                        credentials = credentials)
   print(resp_dat)

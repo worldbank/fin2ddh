@@ -49,3 +49,19 @@ is.empty <- function(s) {
 is_blank <- function(input){
   return(gtools::invalid(input) || all(input == ""))
 }
+
+filter_dataset_fields <- function(metadata_temp,
+                                  ddh_fields = ddhconnect::get_fields()) {
+  dataset_fields <- ddh_fields$machine_name[ddh_fields$node_type == "dataset"]
+  dataset_fields <- unique(dataset_fields)
+  metadata_temp <- metadata_temp[names(metadata_temp) %in% dataset_fields]
+  return(metadata_temp)
+}
+
+filter_resource_fields <- function(metadata_temp,
+                                   ddh_fields = ddhconnect::get_fields()) {
+  resource_fields <- ddh_fields$machine_name[ddh_fields$node_type == "resource"]
+  resource_fields <- unique(resource_fields)
+  metadata_temp <- metadata_temp[names(metadata_temp) %in% resource_fields]
+  return(metadata_temp)
+}

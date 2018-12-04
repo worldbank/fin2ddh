@@ -32,7 +32,7 @@ safe_assert <- function(file_value, orig_value) {
 safe_see_if <- function(file_value, orig_value, field_name) {
   assert_result <- assertthat::see_if(is.same(file_value, orig_value, field_name))
   if(!assert_result){
-    warning(attr(assert_result, "msg"))
+    warning(paste0(field_name, ": The updated value is not equal to the passed value."))
   }
 }
 
@@ -44,10 +44,6 @@ is.same <- function(file_value, orig_value, field_name) {
 
 is.empty <- function(s) {
   is.null(s) || s == ""
-}
-
-assertthat::on_failure(is.same) <- function(call, env) {
-  paste0(deparse(call$field_name), ": The updated value is not equal to the passed value.")
 }
 
 is_blank <- function(input){

@@ -48,7 +48,12 @@ add_new_dataset <- function(metadata_list,
                                                            resource_nids = c(resp_res$nid),
                                                            root_url = root_url,
                                                            credentials = credentials)
-    test_created_dataset(dataset_nid = resp_dat$nid,
+
+    # test created dataset
+    metadata_dataset <- ddhconnect::get_metadata(nid = resp_dat$nid,
+                                                 root_url = root_url,
+                                                 credentials = credentials)
+    test_created_dataset(dataset_metadata = metadata_dataset,
                          metadata_list = metadata_temp,
                          root_url = root_url,
                          credentials = credentials)

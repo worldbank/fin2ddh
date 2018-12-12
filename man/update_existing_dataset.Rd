@@ -6,6 +6,7 @@
 \usage{
 update_existing_dataset(metadata_list,
   master = fin2ddh::get_ddh_records_status(),
+  ddh_fields = ddhconnect::get_fields(), lovs = ddhconnect::get_lovs(),
   root_url = dkanr::get_url(), credentials = list(cookie =
   dkanr::get_cookie(), token = dkanr::get_token()))
 }
@@ -13,6 +14,10 @@ update_existing_dataset(metadata_list,
 \item{metadata_list}{list: list of finance metadata, from get_fin_datasets_metadata()}
 
 \item{master}{dataframe: Output of fin2ddh::get_ddh_records_status()}
+
+\item{ddh_fields}{dataframe: table of all the data catalog fields by node type}
+
+\item{lovs}{dataframe: lookup table of the data catalog tids and values}
 
 \item{root_url}{character: API root URL}
 

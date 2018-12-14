@@ -19,6 +19,8 @@ add_constant_metadata_dataset <- function(metadata_list) {
   metadata_list$field_wbddh_data_type <- "Other"
   metadata_list$field_tags <- "finances.worldbank.org"
   metadata_list$field_license_wbddh <- "Creative Commons Attribution 4.0"
+  # currently required but remove later
+  metadata_list$field_wbddh_responsible <- "No"
 
   return(metadata_list)
 }

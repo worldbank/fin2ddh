@@ -44,6 +44,7 @@ add_new_dataset <- function(metadata_list,
     metadata_temp_resource <- filter_resource_fields(metadata_temp, ddh_fields)
 
     json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
+                                                 dataset_nid = resp_dat$nid,
                                                  publication_status = "published",
                                                  ddh_fields = ddh_fields,
                                                  lovs = lovs,
@@ -51,14 +52,6 @@ add_new_dataset <- function(metadata_list,
     resp_res <- ddhconnect::create_resource(body = json_res,
                                             root_url = root_url,
                                             credentials = credentials)
-
-    # attach dataset to resource
-    json_attach <- ddhconnect::create_json_attach(resource_nids = c(resp_res$nid),
-                                                  root_url = root_url)
-    resp_attach <- ddhconnect::attach_resources_to_dataset(dataset_nid = resp_dat$nid,
-                                                           resource_nids = c(resp_res$nid),
-                                                           root_url = root_url,
-                                                           credentials = credentials)
 
     # test created dataset
     metadata_dataset <- ddhconnect::get_metadata(nid = resp_dat$nid,

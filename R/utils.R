@@ -65,3 +65,15 @@ filter_resource_fields <- function(metadata_temp,
   metadata_temp <- metadata_temp[names(metadata_temp) %in% resource_fields]
   return(metadata_temp)
 }
+
+
+resource_check <- function(nid_list){
+  nids <- unique(nid_list)
+  for(i in 1:length(nid_list)){
+    nid <- nids[[i]]
+    resource_meta <- get_metadata(nid)
+    if(resource_meta$field_wbddh_resource_type$und[[1]]$tid == 631){
+      return(nid)
+    }
+  }
+}

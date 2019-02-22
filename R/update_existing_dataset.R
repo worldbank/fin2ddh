@@ -56,6 +56,13 @@ update_existing_dataset <- function(metadata_list,
                                                root_url = root_url,
                                                credentials = credentials)
   resource_nid <- unlist(ddhconnect::get_resource_nids(metadata_dataset))
+  
+  
+  #makesure resource is Finances Query Tool
+  if(length(resource_nid) > 1){
+    resource_nid <- resource_check(as.list(resource_nid))
+  }
+  
   resp_res <- ddhconnect::update_resource(nid = resource_nid,
                                           body = json_res,
                                           root_url = root_url,

@@ -49,7 +49,7 @@ clean_date <- function(dt) {
   if(nchar(dt) == 6){
     dt <- gsub("FY", "", dt)
   }
-  if(is_year(dt)) {
+  if(suppressWarnings(is_year(dt))) {
     dt <- paste(dt, "01", "01", sep="-")
   }
   else{

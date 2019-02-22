@@ -72,7 +72,7 @@ resource_check <- function(nid_list){
   for(i in 1:length(nid_list)){
     nid <- nids[[i]]
     resource_meta <- get_metadata(nid)
-    if(resource_meta$field_wbddh_resource_type$und[[1]]$tid == 631){
+    if((resource_meta$field_wbddh_resource_type$und[[1]]$tid == 631) & (resource_meta$title == "Visit World Bank Finances")){
       return(nid)
     }
   }

@@ -66,13 +66,15 @@ filter_resource_fields <- function(metadata_temp,
   return(metadata_temp)
 }
 
-
-resource_check <- function(nid_list){
-  nids <- unique(nid_list)
-  for(i in 1:length(nid_list)){
+# Makesure resource is Finances Query Tool
+resource_check <- function(nids,
+                           resource_type  = resource_meta$field_wbddh_resource_type$und[[1]]$tid,
+                           resource_title = resource_meta$title){
+  nids <- unique(nids)
+  for(i in seq_along(nids)){
     nid <- nids[[i]]
     resource_meta <- get_metadata(nid)
-    if((resource_meta$field_wbddh_resource_type$und[[1]]$tid == 631) & (resource_meta$title == "Visit World Bank Finances")){
+    if((resource_type == 631) & (resource_title == "Visit World Bank Finances")){
       return(nid)
     }
   }

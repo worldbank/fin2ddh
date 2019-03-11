@@ -6,7 +6,7 @@ library(jsonlite)
 # Set root_url URL
 # currently pulling from staging
 # root_url <- ddhconnect:::production_root_url
-root_url <- "https://newdatacatalogstg.worldbank.org/"
+root_url <- "http://ddh1stg.prod.acquia-sites.com/"
 
 # STEP 1: Get data --------------------------------------------------------
 httr::set_config(httr::config(ssl_verifypeer = 0L))

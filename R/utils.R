@@ -73,7 +73,7 @@ resource_check <- function(nids,
   nids <- unique(nids)
   for(i in seq_along(nids)){
     nid <- nids[[i]]
-    resource_meta <- get_metadata(nid)
+    resource_meta <- ddhconnect::get_metadata(nid)
     if((resource_type == 631) & (resource_title == "Visit World Bank Finances")){
       return(nid)
     }

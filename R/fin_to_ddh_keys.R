@@ -2,7 +2,7 @@
 #' Extract specific metadata from the Finance API JSON response
 #'
 #' @param metadata_in list: The output of get_fin_datasets_metadata()
-#' @param metadata_out list: Package object: mdlibtoddh::md_placeholder
+#' @param metadata_out list: Package object: fin_placeholder
 #' @param lookup data.frame: Package object: fin2ddh::lookup
 #'
 #' @importFrom hash hash
@@ -14,7 +14,7 @@
 #'
 
 fin_to_ddh_keys <- function(metadata_in,
-                            metadata_out = mdlibtoddh::md_placeholder,
+                            metadata_out = fin_placeholder,
                             lookup = fin2ddh::lookup) {
   fin_keys_lookup <- lookup %>% dplyr::filter(!is.na(finance_json_key))
   lookup_unique <- dplyr::distinct(fin_keys_lookup, ddh_machine_name, finance_json_key)

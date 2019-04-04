@@ -5,13 +5,13 @@
 \title{fin_to_ddh_keys
 Extract specific metadata from the Finance API JSON response}
 \usage{
-fin_to_ddh_keys(metadata_in, metadata_out = mdlibtoddh::md_placeholder,
+fin_to_ddh_keys(metadata_in, metadata_out = fin_placeholder,
   lookup = fin2ddh::lookup)
 }
 \arguments{
 \item{metadata_in}{list: The output of get_fin_datasets_metadata()}
 
-\item{metadata_out}{list: Package object: mdlibtoddh::md_placeholder}
+\item{metadata_out}{list: Package object: fin_placeholder}
 
 \item{lookup}{data.frame: Package object: fin2ddh::lookup}
 }

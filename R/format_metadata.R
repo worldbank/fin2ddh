@@ -16,7 +16,7 @@ format_metadata <- function(metadata_in,
                             date_fields = c("field_wbddh_start_date",
                                             "field_wbddh")) {
   # Format date fields
-  metadata_in[timestamp_fields] <- purrr::map(metadata_in[timestamp_fields], mdlibtoddh::timestamp_to_ddhdate)
+  metadata_in[timestamp_fields] <- purrr::map(metadata_in[timestamp_fields], timestamp_to_ddhdate)
   metadata_in[date_fields] <- purrr::map(metadata_in[date_fields], format_date)
   return(metadata_in)
 }

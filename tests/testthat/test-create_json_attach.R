@@ -2,7 +2,8 @@ context("test-create_json_attach.R")
 
 metadata_list <- list(title = "Afghanistan - World Bank Group Country Survey 2015")
 resource_nid = 107008
-json_template <- mdlibtoddh::json_template_resource
+# json_template <- mdlibtoddh::json_template_resource
+json_template <- ddh_schema_finance_resource
 
 test_that("json attach constructed correctly", {
   json_attach <- jsonlite::fromJSON(create_json_attach(resource_nid, metadata_list, json_template))

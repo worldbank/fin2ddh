@@ -9,20 +9,20 @@
 #'
 
 recursive_date_read <- function(metadata_in) {
-  start_date <- NULL
-  end_date <- NULL
+  start_date  <- NULL
+  end_date    <- NULL
 
   modified_date_loc <- metadata_in$view$rowsUpdatedAt
-  release_date_loc <- metadata_in$view$createdAt
-  modified_date <- mdlibtoddh::timestamp_to_ddhdate(modified_date_loc)
-  release_date <- mdlibtoddh::timestamp_to_ddhdate(release_date_loc)
+  release_date_loc  <- metadata_in$view$createdAt
+  modified_date     <- timestamp_to_ddhdate(modified_date_loc)
+  release_date      <- timestamp_to_ddhdate(release_date_loc)
 
   column_name <- metadata_in$view$metadata$custom_fields$`Additional Information`$`Range Column`
   if(is_valid_column(column_name)){
-    df_columns <- jsonlite::fromJSON(toJSON(metadata_in$view$columns))
-    row <- subset(df_columns, df_columns$fieldName == column_name)
-    start_date <- unlist(row$cachedContents$smallest)
-    end_date <- unlist(row$cachedContents$largest)
+    df_columns  <- jsonlite::fromJSON(toJSON(metadata_in$view$columns))
+    row         <- subset(df_columns, df_columns$fieldName == column_name)
+    start_date  <- unlist(row$cachedContents$smallest)
+    end_date    <- unlist(row$cachedContents$largest)
     # deal with date formats that are hard to parse
     data_type_name <- unlist(row$dataTypeName)
     # TODO: correct the double check

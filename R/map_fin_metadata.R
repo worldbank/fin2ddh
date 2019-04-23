@@ -13,8 +13,8 @@
 map_fin_metadata <- function(metadata_list) {
 
     survey_fields <- names(metadata_list)
-    lkup_values <- finance_lovs
-    lkup_tids <- ddh_lovs
+    lkup_values   <- fin2ddh::finance_lovs
+    lkup_tids     <- fin2ddh::ddh_lovs
 
     # Map values to DDH controlled vocabulary ---------------------------------
     controlled_variables <- survey_fields[survey_fields %in% names(lkup_values)]

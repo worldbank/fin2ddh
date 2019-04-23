@@ -5,7 +5,7 @@
 \title{fin_to_ddh_keys
 Extract specific metadata from the Finance API JSON response}
 \usage{
-fin_to_ddh_keys(metadata_in, metadata_out = fin_placeholder,
+fin_to_ddh_keys(metadata_in, metadata_out = fin2ddh::fin_placeholder,
   lookup = fin2ddh::lookup)
 }
 \arguments{

@@ -16,6 +16,8 @@ Imports: ddhconnect,
   gtools,
   stringr,
   assertthat,
-  lubridate
+  lubridate,
+  stats,
+  rlang
 Suggests: testthat
 RoxygenNote: 6.1.1

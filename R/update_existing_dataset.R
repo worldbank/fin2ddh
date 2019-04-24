@@ -42,31 +42,41 @@ update_existing_dataset <- function(metadata_list,
                                          root_url = root_url,
                                          credentials = credentials)
 
-  # create resource
-  metadata_temp <- add_constant_metadata_resource(metadata_temp)
-  metadata_temp_resource <- filter_resource_fields(metadata_temp, ddh_fields)
-  json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
-                                               dataset_nid = resp_dat$nid,
-                                               publication_status = "published",
-                                               ddh_fields = ddh_fields,
-                                               lovs = lovs,
-                                               root_url = root_url)
 
-  metadata_dataset <- ddhconnect::get_metadata(nid = resp_dat$nid,
-                                               root_url = root_url,
-                                               credentials = credentials)
-  resource_nid <- unlist(ddhconnect::get_resource_nids(metadata_dataset))
-  
-  
-  # makesure resource is Finances Query Tool
-  if(length(resource_nid) > 1){
-    resource_nid <- resource_check(as.list(resource_nid))
-  }
-  
-  resp_res <- ddhconnect::update_resource(nid = resource_nid,
-                                          body = json_res,
-                                          root_url = root_url,
-                                          credentials = credentials)
+  tryCatch({
+
+    # create resource
+    metadata_temp <- add_constant_metadata_resource(metadata_temp)
+    metadata_temp_resource <- filter_resource_fields(metadata_temp, ddh_fields)
+    json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
+                                                 dataset_nid = resp_dat$nid,
+                                                 publication_status = "published",
+                                                 ddh_fields = ddh_fields,
+                                                 lovs = lovs,
+                                                 root_url = root_url)
+
+    metadata_dataset <- ddhconnect::get_metadata(nid = resp_dat$nid,
+                                                 root_url = root_url,
+                                                 credentials = credentials)
+    resource_nid <- unlist(ddhconnect::get_resource_nids(metadata_dataset))
+
+
+    # makesure resource is Finances Query Tool
+    if(length(resource_nid) > 1){
+      resource_nid <- resource_check(as.list(resource_nid))
+    }
+
+    resp_res <- ddhconnect::update_resource(nid = resource_nid,
+                                            body = json_res,
+                                            root_url = root_url,
+                                            credentials = credentials)
+
+  }, error = function(e){
+
+    return(paste("Error:",e,"; with creating resources for", resp_dat))
+
+  })
+
 
   test_created_dataset(dataset_metadata = metadata_dataset,
                        metadata_list = metadata_temp_dataset,

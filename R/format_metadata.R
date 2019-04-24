@@ -3,8 +3,8 @@
 #' Format metadata fields to the format accepted by ddh
 #'
 #' @param metadata_in list: flattened list of metadata
-#' @param date_fields character: variables to be processed as dates
-#' @param text_fields character: variables to be processed as text
+#' @param timestamp_fields character: variables to be processed as dates
+#' @param date_fields character: variables to be processed as text
 #'
 #' @return list
 #' @export

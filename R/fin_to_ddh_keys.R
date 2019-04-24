@@ -8,16 +8,18 @@
 #' @importFrom hash hash
 #' @importFrom magrittr "%>%"
 #' @import purrr
+#' @import dplyr
+#' @importFrom rlang .data
 #' @return list
 #'
 #' @export
 #'
 
 fin_to_ddh_keys <- function(metadata_in,
-                            metadata_out = fin_placeholder,
+                            metadata_out = fin2ddh::fin_placeholder,
                             lookup = fin2ddh::lookup) {
-  fin_keys_lookup <- lookup %>% dplyr::filter(!is.na(finance_json_key))
-  lookup_unique <- dplyr::distinct(fin_keys_lookup, ddh_machine_name, finance_json_key)
+  fin_keys_lookup <- dplyr::filter(lookup,!is.na(.data$finance_json_key))
+  lookup_unique <- dplyr::distinct(fin_keys_lookup, .data$ddh_machine_name, .data$finance_json_key)
   fin_machine_names <- lookup_unique$ddh_machine_name
   h <- hash::hash(keys = lookup_unique$ddh_machine_name, values = lookup_unique$finance_json_key)
 

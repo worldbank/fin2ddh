@@ -12,9 +12,9 @@ format_metadata(metadata_in,
 \arguments{
 \item{metadata_in}{list: flattened list of metadata}
 
-\item{date_fields}{character: variables to be processed as dates}
+\item{timestamp_fields}{character: variables to be processed as dates}
 
-\item{text_fields}{character: variables to be processed as text}
+\item{date_fields}{character: variables to be processed as text}
 }
 \value{
 list

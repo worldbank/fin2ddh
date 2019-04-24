@@ -35,7 +35,7 @@ get_ddh_records_status <- function(root_url = dkanr::get_url(),
   full_list$time_diff <- NULL
 
   # Identify duplicates
-  full_list$oldest_timestamp <- ave(full_list$ddh_created, full_list$fin_internal_id, FUN = min)
+  full_list$oldest_timestamp <- stats::ave(full_list$ddh_created, full_list$fin_internal_id, FUN = min)
   full_list$duplicate_status <- ifelse(full_list$ddh_created == full_list$oldest_timestamp, "original", "duplicate")
   full_list$oldest_timestamp <- NULL
 

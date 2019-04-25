@@ -42,10 +42,8 @@ update_existing_dataset <- function(metadata_list,
                                          root_url = root_url,
                                          credentials = credentials)
 
-
   tryCatch({
-
-    # create resource
+    # Update Resource
     metadata_temp <- add_constant_metadata_resource(metadata_temp)
     metadata_temp_resource <- filter_resource_fields(metadata_temp, ddh_fields)
     json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
@@ -71,17 +69,17 @@ update_existing_dataset <- function(metadata_list,
                                             root_url = root_url,
                                             credentials = credentials)
 
+    test_created_dataset(dataset_metadata = metadata_dataset,
+                         metadata_list = metadata_temp_dataset,
+                         root_url = root_url,
+                         credentials = credentials)
+
+    return(resp_dat$uri)
+
   }, error = function(e){
 
-    return(paste("Error:",e,"; with creating resources for", resp_dat))
+    return(paste("Error:",e,"; with creating resources for", resp_dat$uri))
 
   })
-
-
-  test_created_dataset(dataset_metadata = metadata_dataset,
-                       metadata_list = metadata_temp_dataset,
-                       root_url = root_url,
-                       credentials = credentials)
-  print(resp_dat)
 }
 

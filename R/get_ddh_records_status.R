@@ -4,6 +4,7 @@
 #'
 #' @param root_url character: API root URL
 #' @param credentials list: object returned by the get_credentials() function
+#' @param is_unit_test boolean: check if unit test is being run
 #'
 #' @return data frame
 #' @export
@@ -11,10 +12,11 @@
 
 get_ddh_records_status <- function(root_url = dkanr::get_url(),
                                    credentials = list(cookie = dkanr::get_cookie(),
-                                                      token = dkanr::get_token())) {
+                                                      token = dkanr::get_token()),
+                                   is_unit_test = FALSE) {
   # ddh
   # subset the ddh catalog for the finance datasets
-  ddh_list <- get_finance_datasets(root_url = root_url, credentials = credentials)
+  ddh_list <- get_finance_datasets(root_url = root_url, credentials = credentials, is_unit_test)
   ddh_list$ddh_updated <- as.numeric(lubridate::ymd_hms(ddh_list$ddh_updated))
 
   # finance harvest
@@ -46,22 +48,31 @@ get_ddh_records_status <- function(root_url = dkanr::get_url(),
 
 get_finance_datasets <- function(root_url = dkanr::get_url(),
                                  credentials = list(cookie = dkanr::get_cookie(),
-                                                    token = dkanr::get_token())) {
-  finance_datasets <- ddhconnect::search_catalog(
-    fields = c(
-      "nid",
-      "field_ddh_harvest_src",
-      "field_ddh_harvest_sys_id",
-      "field_wbddh_modified_date",
-      "created"
-    ),
-    filters = c(
-      "field_ddh_harvest_src" = "1015",
-      "type" = "dataset"
-    ),
-    credentials = credentials,
-    root_url = root_url
-  )
+                                                    token = dkanr::get_token()),
+                                 is_unit_test = FALSE) {
+
+  if(is_unit_test){
+
+     finance_datasets <- ddh_fin_datasets_test
+
+  } else{
+
+    finance_datasets <- ddhconnect::search_catalog(
+      fields = c(
+        "nid",
+        "field_ddh_harvest_src",
+        "field_ddh_harvest_sys_id",
+        "field_wbddh_modified_date",
+        "created"
+      ),
+      filters = c(
+        "field_ddh_harvest_src" = "1015",
+        "type" = "dataset"
+      ),
+      credentials = credentials,
+      root_url = root_url
+    )
+  }
 
   ddh_nids <- as.character(purrr::map(finance_datasets, "nid"))
   ddh_created <- as.character(purrr::map(finance_datasets, "created"))

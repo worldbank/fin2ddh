@@ -1,0 +1,2135 @@
+{
+"count": 71,
+"result": {
+"139691": {
+"nid": "139691",
+"created": "1509467993",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-10 05:10:15",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "sfv5-tf7p",
+"format": null,
+"safe_value": "sfv5-tf7p"
+}
+]
+}
+},
+"139693": {
+"nid": "139693",
+"created": "1509468006",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-10 04:37:15",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "ebmi-69yj",
+"format": null,
+"safe_value": "ebmi-69yj"
+}
+]
+}
+},
+"139695": {
+"nid": "139695",
+"created": "1509468018",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-10 05:17:48",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "zucq-nrc3",
+"format": null,
+"safe_value": "zucq-nrc3"
+}
+]
+}
+},
+"139697": {
+"nid": "139697",
+"created": "1509468032",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-09 02:33:22",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "a3d9-f9xv",
+"format": null,
+"safe_value": "a3d9-f9xv"
+}
+]
+}
+},
+"139703": {
+"nid": "139703",
+"created": "1509468073",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2017-01-04 21:33:07",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "nh5z-5qch",
+"format": null,
+"safe_value": "nh5z-5qch"
+}
+]
+}
+},
+"139705": {
+"nid": "139705",
+"created": "1509468089",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-10 04:40:59",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "tdwh-3krx",
+"format": null,
+"safe_value": "tdwh-3krx"
+}
+]
+}
+},
+"139709": {
+"nid": "139709",
+"created": "1509468119",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-03-10 05:11:30",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "536v-dxib",
+"format": null,
+"safe_value": "536v-dxib"
+}
+]
+}
+},
+"139711": {
+"nid": "139711",
+"created": "1509468134",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-03-10 03:17:08",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "ax5s-vav5",
+"format": null,
+"safe_value": "ax5s-vav5"
+}
+]
+}
+},
+"139713": {
+"nid": "139713",
+"created": "1509468149",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-03-28 15:13:23",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "psn8-56xf",
+"format": null,
+"safe_value": "psn8-56xf"
+}
+]
+}
+},
+"139715": {
+"nid": "139715",
+"created": "1509468166",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-03-25 11:22:10",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "xajb-umcc",
+"format": null,
+"safe_value": "xajb-umcc"
+}
+]
+}
+},
+"139717": {
+"nid": "139717",
+"created": "1509468179",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2016-01-29 21:08:09",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "h9ga-h5eb",
+"format": null,
+"safe_value": "h9ga-h5eb"
+}
+]
+}
+},
+"139719": {
+"nid": "139719",
+"created": "1509468198",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-23 07:03:39",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "efin-cagm",
+"format": null,
+"safe_value": "efin-cagm"
+}
+]
+}
+},
+"139723": {
+"nid": "139723",
+"created": "1509468229",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-03-10 05:28:59",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "h4s8-nwev",
+"format": null,
+"safe_value": "h4s8-nwev"
+}
+]
+}
+},
+"139725": {
+"nid": "139725",
+"created": "1509468244",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2013-11-06 16:44:28",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "2ppx-k958",
+"format": null,
+"safe_value": "2ppx-k958"
+}
+]
+}
+},
+"139727": {
+"nid": "139727",
+"created": "1509468260",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-12-03 14:32:05",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "b4ku-nmqr",
+"format": null,
+"safe_value": "b4ku-nmqr"
+}
+]
+}
+},
+"139729": {
+"nid": "139729",
+"created": "1509468278",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-12-11 12:50:54",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "u4wq-7b6m",
+"format": null,
+"safe_value": "u4wq-7b6m"
+}
+]
+}
+},
+"139731": {
+"nid": "139731",
+"created": "1509468296",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2012-10-29 06:07:31",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "m54j-ersw",
+"format": null,
+"safe_value": "m54j-ersw"
+}
+]
+}
+},
+"139739": {
+"nid": "139739",
+"created": "1509468360",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2017-12-12 12:06:17",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "kjmm-jfbk",
+"format": null,
+"safe_value": "kjmm-jfbk"
+}
+]
+}
+},
+"139741": {
+"nid": "139741",
+"created": "1509468378",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2013-11-06 16:42:24",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "b4d6-42j9",
+"format": null,
+"safe_value": "b4d6-42j9"
+}
+]
+}
+},
+"139745": {
+"nid": "139745",
+"created": "1509468413",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2016-01-04 17:08:22",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "jeqz-f7mn",
+"format": null,
+"safe_value": "jeqz-f7mn"
+}
+]
+}
+},
+"139747": {
+"nid": "139747",
+"created": "1509468429",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-02-25 16:31:12",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "56hn-zupx",
+"format": null,
+"safe_value": "56hn-zupx"
+}
+]
+}
+},
+"139749": {
+"nid": "139749",
+"created": "1509468445",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2017-12-13 11:20:34",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "vq9a-4dmu",
+"format": null,
+"safe_value": "vq9a-4dmu"
+}
+]
+}
+},
+"139751": {
+"nid": "139751",
+"created": "1509468463",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-03-10 02:49:41",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "fie8-6fxn",
+"format": null,
+"safe_value": "fie8-6fxn"
+}
+]
+}
+},
+"139755": {
+"nid": "139755",
+"created": "1509468500",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-12-11 01:23:11",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "4dxe-6ajj",
+"format": null,
+"safe_value": "4dxe-6ajj"
+}
+]
+}
+},
+"139759": {
+"nid": "139759",
+"created": "1509468535",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-12-22 15:42:08",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "4x9h-fnzu",
+"format": null,
+"safe_value": "4x9h-fnzu"
+}
+]
+}
+},
+"139761": {
+"nid": "139761",
+"created": "1509468553",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-01-22 12:44:20",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "hc8y-24bu",
+"format": null,
+"safe_value": "hc8y-24bu"
+}
+]
+}
+},
+"139763": {
+"nid": "139763",
+"created": "1509468572",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-02-25 16:44:42",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "k6tm-smim",
+"format": null,
+"safe_value": "k6tm-smim"
+}
+]
+}
+},
+"139767": {
+"nid": "139767",
+"created": "1509468605",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2016-07-02 16:55:51",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "p65j-3upu",
+"format": null,
+"safe_value": "p65j-3upu"
+}
+]
+}
+},
+"139771": {
+"nid": "139771",
+"created": "1509468640",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-02-25 16:37:10",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "m54c-7nnc",
+"format": null,
+"safe_value": "m54c-7nnc"
+}
+]
+}
+},
+"139773": {
+"nid": "139773",
+"created": "1509468661",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-11-19 09:20:23",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "59dm-bgyg",
+"format": null,
+"safe_value": "59dm-bgyg"
+}
+]
+}
+},
+"139775": {
+"nid": "139775",
+"created": "1509468681",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-02-25 16:29:36",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "tm6i-3ngg",
+"format": null,
+"safe_value": "tm6i-3ngg"
+}
+]
+}
+},
+"139777": {
+"nid": "139777",
+"created": "1509468703",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-02-03 16:47:44",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "79y4-tfzf",
+"format": null,
+"safe_value": "79y4-tfzf"
+}
+]
+}
+},
+"139779": {
+"nid": "139779",
+"created": "1509468724",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-11-12 02:29:49",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "6ajy-n8cq",
+"format": null,
+"safe_value": "6ajy-n8cq"
+}
+]
+}
+},
+"139781": {
+"nid": "139781",
+"created": "1509468745",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-02-25 16:30:11",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "uycx-6n2y",
+"format": null,
+"safe_value": "uycx-6n2y"
+}
+]
+}
+},
+"139783": {
+"nid": "139783",
+"created": "1509468763",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-11-19 09:08:18",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "wdx8-uxce",
+"format": null,
+"safe_value": "wdx8-uxce"
+}
+]
+}
+},
+"139785": {
+"nid": "139785",
+"created": "1509468783",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2013-04-09 03:13:37",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "iww5-3sst",
+"format": null,
+"safe_value": "iww5-3sst"
+}
+]
+}
+},
+"139787": {
+"nid": "139787",
+"created": "1509468805",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-11-25 16:54:40",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "ja8b-pkfu",
+"format": null,
+"safe_value": "ja8b-pkfu"
+}
+]
+}
+},
+"139789": {
+"nid": "139789",
+"created": "1509468827",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-01-28 18:01:21",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "ait6-f4ye",
+"format": null,
+"safe_value": "ait6-f4ye"
+}
+]
+}
+},
+"139791": {
+"nid": "139791",
+"created": "1509468850",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-11 03:00:06",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "gsdw-avpz",
+"format": null,
+"safe_value": "gsdw-avpz"
+}
+]
+}
+},
+"139793": {
+"nid": "139793",
+"created": "1509468869",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-11-19 08:37:09",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "8z8j-5kw3",
+"format": null,
+"safe_value": "8z8j-5kw3"
+}
+]
+}
+},
+"139801": {
+"nid": "139801",
+"created": "1509468949",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-02-25 11:38:10",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "p6w9-53mx",
+"format": null,
+"safe_value": "p6w9-53mx"
+}
+]
+}
+},
+"139803": {
+"nid": "139803",
+"created": "1509468971",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2013-08-21 21:19:53",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "g66a-y86t",
+"format": null,
+"safe_value": "g66a-y86t"
+}
+]
+}
+},
+"139805": {
+"nid": "139805",
+"created": "1509468996",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-12-17 20:39:28",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "fyqs-heff",
+"format": null,
+"safe_value": "fyqs-heff"
+}
+]
+}
+},
+"139809": {
+"nid": "139809",
+"created": "1509469040",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-02-25 16:25:23",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "bbpv-ygrh",
+"format": null,
+"safe_value": "bbpv-ygrh"
+}
+]
+}
+},
+"139811": {
+"nid": "139811",
+"created": "1509469059",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-07-31 21:03:02",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "3y3w-9y4k",
+"format": null,
+"safe_value": "3y3w-9y4k"
+}
+]
+}
+},
+"139813": {
+"nid": "139813",
+"created": "1509469079",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-09-22 14:53:37",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "4473-ytve",
+"format": null,
+"safe_value": "4473-ytve"
+}
+]
+}
+},
+"139815": {
+"nid": "139815",
+"created": "1509469102",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-11-19 09:02:17",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "4ahj-za8u",
+"format": null,
+"safe_value": "4ahj-za8u"
+}
+]
+}
+},
+"139817": {
+"nid": "139817",
+"created": "1509469125",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2014-09-19 21:21:37",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "j2nx-ayiz",
+"format": null,
+"safe_value": "j2nx-ayiz"
+}
+]
+}
+},
+"139825": {
+"nid": "139825",
+"created": "1509469220",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-11-19 08:20:57",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "he3k-et8a",
+"format": null,
+"safe_value": "he3k-et8a"
+}
+]
+}
+},
+"139829": {
+"nid": "139829",
+"created": "1509469266",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2013-04-02 20:57:59",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "fjye-9bys",
+"format": null,
+"safe_value": "fjye-9bys"
+}
+]
+}
+},
+"139831": {
+"nid": "139831",
+"created": "1509469293",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-11-25 17:32:41",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "64f3-59mr",
+"format": null,
+"safe_value": "64f3-59mr"
+}
+]
+}
+},
+"139833": {
+"nid": "139833",
+"created": "1509469317",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2015-11-25 17:38:44",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "ngic-nfw9",
+"format": null,
+"safe_value": "ngic-nfw9"
+}
+]
+}
+},
+"139847": {
+"nid": "139847",
+"created": "1509469498",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-03-01 10:49:51",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "54xn-mzza",
+"format": null,
+"safe_value": "54xn-mzza"
+}
+]
+}
+},
+"144787": {
+"nid": "144787",
+"created": "1540496924",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-10-24 04:04:09",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "9g9y-b7rs",
+"format": null,
+"safe_value": "9g9y-b7rs"
+}
+]
+}
+},
+"144791": {
+"nid": "144791",
+"created": "1540496950",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-10-24 04:02:25",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "yu93-ayrw",
+"format": null,
+"safe_value": "yu93-ayrw"
+}
+]
+}
+},
+"144793": {
+"nid": "144793",
+"created": "1540496974",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-05-31 14:08:43",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "d6ct-5h8d",
+"format": null,
+"safe_value": "d6ct-5h8d"
+}
+]
+}
+},
+"151271": {
+"nid": "151271",
+"created": "1548360132",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-09 11:52:08",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "xnse-jvg2",
+"format": null,
+"safe_value": "xnse-jvg2"
+}
+]
+}
+},
+"151286": {
+"nid": "151286",
+"created": "1548448686",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-09 11:49:42",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "3gfy-jd4r",
+"format": null,
+"safe_value": "3gfy-jd4r"
+}
+]
+}
+},
+"160576": {
+"nid": "160576",
+"created": "1549472956",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-03-19 07:29:54",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "cg7w-bf4s",
+"format": null,
+"safe_value": "cg7w-bf4s"
+}
+]
+}
+},
+"199036": {
+"nid": "199036",
+"created": "1550167559",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-11 03:00:09",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "v84d-dq44",
+"format": null,
+"safe_value": "v84d-dq44"
+}
+]
+}
+},
+"206901": {
+"nid": "206901",
+"created": "1552333124",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-03-08 15:28:57",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "3fps-tcuv",
+"format": null,
+"safe_value": "3fps-tcuv"
+}
+]
+}
+},
+"210286": {
+"nid": "210286",
+"created": "1553086816",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-01-10 06:22:52",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "9wav-a9jm",
+"format": null,
+"safe_value": "9wav-a9jm"
+}
+]
+}
+},
+"210296": {
+"nid": "210296",
+"created": "1553086822",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2018-02-15 03:24:13",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "ijmu-5v4p",
+"format": null,
+"safe_value": "ijmu-5v4p"
+}
+]
+}
+},
+"213331": {
+"nid": "213331",
+"created": "1554408747",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-11 07:55:01",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "b74b-t2z3",
+"format": null,
+"safe_value": "b74b-t2z3"
+}
+]
+}
+},
+"213341": {
+"nid": "213341",
+"created": "1554409732",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-23 02:59:54",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "rcx4-r7xj",
+"format": null,
+"safe_value": "rcx4-r7xj"
+}
+]
+}
+},
+"214421": {
+"nid": "214421",
+"created": "1555014133",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-09 11:59:59",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "5fcd-tqcy",
+"format": null,
+"safe_value": "5fcd-tqcy"
+}
+]
+}
+},
+"214441": {
+"nid": "214441",
+"created": "1555014641",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-09 11:59:59",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "5fcd-tqcy",
+"format": null,
+"safe_value": "5fcd-tqcy"
+}
+]
+}
+},
+"214451": {
+"nid": "214451",
+"created": "1555014859",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-09 11:59:59",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "5fcd-tqcy",
+"format": null,
+"safe_value": "5fcd-tqcy"
+}
+]
+}
+},
+"214461": {
+"nid": "214461",
+"created": "1555014862",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-09 12:10:49",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "syc3-z6vr",
+"format": null,
+"safe_value": "syc3-z6vr"
+}
+]
+}
+},
+"216321": {
+"nid": "216321",
+"created": "1556051034",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-14 03:00:02",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "v84d-dq44",
+"format": null,
+"safe_value": "v84d-dq44"
+}
+]
+}
+},
+"216411": {
+"nid": "216411",
+"created": "1556122204",
+"field_wbddh_modified_date": {
+"und": [
+{
+"value": "2019-04-23 07:03:39",
+"timezone": "America/New_York",
+"timezone_db": "America/New_York",
+"date_type": "datetime"
+}
+]
+},
+"field_ddh_harvest_src": {
+"und": [
+{
+"tid": "1015"
+}
+]
+},
+"field_ddh_harvest_sys_id": {
+"und": [
+{
+"value": "efin-cagm",
+"format": null,
+"safe_value": "efin-cagm"
+}
+]
+}
+}
+}
+}

@@ -6,12 +6,14 @@
 \usage{
 get_ddh_records_status(root_url = dkanr::get_url(),
   credentials = list(cookie = dkanr::get_cookie(), token =
-  dkanr::get_token()))
+  dkanr::get_token()), is_unit_test = FALSE)
 }
 \arguments{
 \item{root_url}{character: API root URL}
 
 \item{credentials}{list: object returned by the get_credentials() function}
+
+\item{is_unit_test}{boolean: check if unit test is being run}
 }
 \value{
 data frame

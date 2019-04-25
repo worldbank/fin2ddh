@@ -53,7 +53,7 @@ get_finance_datasets <- function(root_url = dkanr::get_url(),
 
   if(is_unit_test){
 
-     finance_datasets <- ddh_fin_datasets_test
+    finance_datasets <- ddh_fin_datasets_test$result
 
   } else{
 
@@ -76,7 +76,9 @@ get_finance_datasets <- function(root_url = dkanr::get_url(),
 
   ddh_nids <- as.character(purrr::map(finance_datasets, "nid"))
   ddh_created <- as.character(purrr::map(finance_datasets, "created"))
+
   ddh_updated <- as.character(purrr::map(finance_datasets, function(x) x[["field_wbddh_modified_date"]][["und"]][[1]][["value"]]))
+
   fin_internal_id <- as.character(purrr::map(finance_datasets, function(x) x[["field_ddh_harvest_sys_id"]][["und"]][[1]][["value"]]))
 
   out <- data.frame(ddh_nids, ddh_created, ddh_updated, fin_internal_id, stringsAsFactors = FALSE)

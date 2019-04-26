@@ -7,7 +7,8 @@
 add_new_dataset(metadata_list, ddh_fields = ddhconnect::get_fields(),
   lovs = ddhconnect::get_lovs(), root_url = dkanr::get_url(),
   credentials = list(cookie = dkanr::get_cookie(), token =
-  dkanr::get_token()))
+  dkanr::get_token()), is_unit_test_dataset = FALSE,
+  is_unit_test_resource = FALSE)
 }
 \arguments{
 \item{metadata_list}{list: list with one finance dataset's metadata, from get_fin_datasets_metadata()}
@@ -19,6 +20,10 @@ add_new_dataset(metadata_list, ddh_fields = ddhconnect::get_fields(),
 \item{root_url}{character: API root URL}
 
 \item{credentials}{list: object returned by the dkanr::get_credentials() function}
+
+\item{is_unit_test_dataset}{boolean: check if unit test is being run for dataset}
+
+\item{is_unit_test_resource}{boolean: check if unit test is being run for dataset}
 }
 \value{
 list

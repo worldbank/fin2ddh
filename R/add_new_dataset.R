@@ -7,6 +7,8 @@
 #' @param lovs dataframe: lookup table of the data catalog tids and values
 #' @param root_url character: API root URL
 #' @param credentials list: object returned by the dkanr::get_credentials() function
+#' @param is_unit_test_dataset boolean: check if unit test is being run for dataset
+#' @param is_unit_test_resource boolean: check if unit test is being run for dataset
 #'
 #' @import jsonlite
 #' @return list
@@ -18,7 +20,9 @@ add_new_dataset <- function(metadata_list,
                             lovs = ddhconnect::get_lovs(),
                             root_url = dkanr::get_url(),
                             credentials = list(cookie = dkanr::get_cookie(),
-                                              token = dkanr::get_token())) {
+                                              token = dkanr::get_token()),
+                            is_unit_test_dataset = FALSE,
+                            is_unit_test_resource = FALSE) {
 
     # format raw metadata
     metadata_temp <- fin_to_ddh_keys(metadata_list)
@@ -30,20 +34,33 @@ add_new_dataset <- function(metadata_list,
 
     # create dataset
     metadata_temp_dataset <- filter_dataset_fields(metadata_temp, ddh_fields)
+
+    # Return metadata_list if function is being used in unit test
+    if(is_unit_test_dataset){
+      return(metadata_temp_dataset)
+    }
+
     json_dat <- ddhconnect::create_json_dataset(values = metadata_temp_dataset,
                                                 publication_status = "published",
                                                 ddh_fields = ddh_fields,
                                                 lovs = lovs,
                                                 root_url = root_url)
+
+
     resp_dat <- ddhconnect::create_dataset(body = json_dat,
                                            root_url = root_url,
                                            credentials = credentials)
-
 
     tryCatch({
       # Create Resource
       metadata_temp           <- add_constant_metadata_resource(metadata_temp)
       metadata_temp_resource  <- filter_resource_fields(metadata_temp, ddh_fields)
+
+
+      # Return metadata_list if function is being used in unit test
+      if(is_unit_test_resource){
+        return(metadata_temp_resource)
+      }
 
       json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
                                                    dataset_nid = resp_dat$nid,
@@ -51,6 +68,8 @@ add_new_dataset <- function(metadata_list,
                                                    ddh_fields = ddh_fields,
                                                    lovs = lovs,
                                                    root_url = root_url)
+
+
       resp_res <- ddhconnect::create_resource(body = json_res,
                                               root_url = root_url,
                                               credentials = credentials)

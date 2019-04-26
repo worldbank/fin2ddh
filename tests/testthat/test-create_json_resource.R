@@ -1,35 +1,62 @@
-#TODO NEED TO UPDATE UNIT TESTS
+library(jsonlite)
 
-# context("test-create_json_resource.R")
-# 
-# # httptest::start_capturing(path = './tests/testthat')
-# # dkanr::get_url()
-# # dkanr::get_cookie()
-# # dkanr::get_token()
-# # ddhconnect::get_lovs()
-# # httptest::stop_capturing()
-# 
-# # credentials = list(cookie = dkanr::get_cookie(),
-# #                    token = dkanr::get_token())
-# 
-# # TODO need to fix issue with httptest
-# metadata_list = list(field_ddh_harvest_sys_id = "kdui-wcs3")
-# 
-# httptest::with_mock_api({
-#   test_that("resource fields have correct values", {
-#     credentials = list(cookie = dkanr::get_cookie(),
-#                        token = dkanr::get_token())
-#     lovs <- ddhconnect::get_lovs(root_url = dkanr::get_url())
-# 
-#     json_resource <- jsonlite::fromJSON(ddhconnect::create_json_resource(metadata_list))
-#     expect_equal(json_resource$title, "Visit World Bank Finances")
-# 
-#     tid_type <- unlist(json_resource$field_wbddh_resource_type, use.names = FALSE)
-#     expect_equal(lovs[lovs$machine_name == "field_wbddh_resource_type" & lovs$tid == tid_type, "list_value_name"], "Query Tool")
-# 
-#     tid_data_class <- unlist(json_resource$field_wbddh_data_class, use.names = FALSE)
-#     expect_equal(lovs[lovs$machine_name == "field_wbddh_data_class" & lovs$tid == tid_data_class, "list_value_name"], "Public")
-# 
-#     # expect_equal(json_resource$field_link_api, paste0("http://finances.worldbank.org/d/", metadata_list$field_ddh_harvest_sys_id))
-#   })
-# })
+context("test-create_json_resource.R")
+
+dkanr::dkanr_setup(url = "http://ddh1stg.prod.acquia-sites.com/",
+                   username = "dec_api_aa",
+                   password = "*42wW9&W")
+
+ddh_status    <- get_ddh_records_status(is_unit_test = TRUE)
+fin_datasets_new <- dplyr::filter(ddh_status, status == "new")
+fin_metadata  <- get_fin_datasets_metadata(fin_datasets_new$fin_internal_id, is_unit_test = TRUE)
+
+test_that("Test that resource values are mapped correctly", {
+  # Create JSON of finance dataset
+  metadata_list <- add_new_dataset(metadata_list = fin_metadata[[1]], is_unit_test_resource = TRUE)
+  fin_json      <- ddhconnect::create_json_resource(values = metadata_list)
+
+  # Create JSON of Test dataset
+  test_metadata_list <- list()
+
+  test_metadata_list$field_ddh_harvest_src[1]     <- "Finances"
+  test_metadata_list$field_ddh_harvest_sys_id[1]  <- "sfv5-tf7p"
+  test_metadata_list$field_wbddh_data_class[1]    <- "Public"
+  test_metadata_list$title[1]                     <- "Visit World Bank Finances"
+  test_metadata_list$field_wbddh_data_class[1]    <- "Public"
+  test_metadata_list$field_link_api[1]            <- "http://finances.worldbank.org/d/sfv5-tf7p"
+  test_metadata_list$field_wbddh_resource_type[1] <- "Query Tool"
+
+
+  test_json      <- ddhconnect::create_json_resource(values = test_metadata_list)
+
+  # Check if both are equal
+  expect_equal(fin_json, test_json)
+})
+
+
+test_that("Throw error with invalid fields", {
+
+  # Create JSON of Test dataset
+  test_metadata_list <- list()
+  test_metadata_list$field_ddh_harvest_src[1] <- "Finances"
+  test_metadata_list$title[1]                 <- "Visit World Bank Finances"
+
+  #invalid field
+  test_metadata_list$field_invalid_test[1] <- "FAIL"
+
+  expect_error(ddhconnect::create_json_resource(values = test_metadata_list))
+})
+
+
+test_that("Throw error with invalid value", {
+
+  # Create JSON of Test dataset
+  test_metadata_list <- list()
+  test_metadata_list$field_ddh_harvest_src[1] <- "Finances"
+  test_metadata_list$title[1]                 <- "Visit World Bank Finances"
+
+  #invalid value
+  test_metadata_list$field_wbddh_data_class[1]    <- "FAIL"
+
+  expect_error(ddhconnect::create_json_resource(values = test_metadata_list))
+})

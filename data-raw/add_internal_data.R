@@ -24,7 +24,6 @@ ddh_schema_finance_resource <- jsonlite::fromJSON("./data-raw/ddh_schema_finance
 # For unit tests
 ddh_fin_datasets_test         <- jsonlite::fromJSON("./data-raw/ddh_fin_datasets.json", simplifyVector = FALSE)
 fin_portal_datasets_test      <- jsonlite::fromJSON("./data-raw/fin_portal_datasets.json", simplifyVector = FALSE)
-fin_dataset_mapping_success   <- jsonlite::fromJSON("./data-raw/fin_dataset_mapping_success.json", simplifyVector = FALSE)
 
 # STEP 2: Merge data ------------------------------------------------------
 lookup <- ddh_finance_map %>%
@@ -152,5 +151,4 @@ devtools::use_data(ddh_schema_finance_dataset,
                    ddh_schema_finance_resource,
                    ddh_fin_datasets_test,
                    fin_portal_datasets_test,
-                   fin_dataset_mapping_success,
                    overwrite = TRUE)

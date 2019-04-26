@@ -2,6 +2,10 @@ library(jsonlite)
 
 context("test-create_json_dataset.R")
 
+dkanr::dkanr_setup(url = "http://ddh1stg.prod.acquia-sites.com/",
+                   username = "dec_api_aa",
+                   password = "*42wW9&W")
+
 ddh_status    <- get_ddh_records_status(is_unit_test = TRUE)
 fin_datasets_new <- dplyr::filter(ddh_status, status == "new")
 fin_metadata  <- get_fin_datasets_metadata(fin_datasets_new$fin_internal_id, is_unit_test = TRUE)
@@ -9,6 +13,7 @@ fin_metadata  <- get_fin_datasets_metadata(fin_datasets_new$fin_internal_id, is_
 test_that("Test that dataset values are mapped correctly", {
   # Create JSON of finance dataset
   metadata_list <- add_new_dataset(metadata_list = fin_metadata[[1]], is_unit_test_dataset = TRUE)
+  fin_json      <- ddhconnect::create_json_dataset(values = metadata_list)
 
   # Create JSON of Test dataset
   test_metadata_list <- list()
@@ -37,6 +42,38 @@ test_that("Test that dataset values are mapped correctly", {
   test_metadata_list$field_wbddh_country[1]                 <- "Region/Country not specified"
   test_metadata_list$field_wbddh_economy_coverage[1]        <- "Economy Coverage not specified"
   test_metadata_list$field_frequency[1]                     <- "Periodicity not specified"
+
+  test_json      <- ddhconnect::create_json_dataset(values = test_metadata_list)
+
   # Check if both are equal
   expect_equal(fin_json, test_json)
 })
+
+
+test_that("Throw error with invalid fields", {
+
+  # Create JSON of Test dataset
+  test_metadata_list <- list()
+  test_metadata_list$field_ddh_harvest_src[1] <- "Finances"
+  test_metadata_list$title[1]                 <- "IBRD Statement of Loans - Latest Available Snapshot"
+
+  #invalid field
+  test_metadata_list$field_invalid_test[1] <- "FAIL"
+
+  expect_error(ddhconnect::create_json_dataset(values = test_metadata_list))
+})
+
+test_that("Throw error with invalid value", {
+
+  # Create JSON of Test dataset
+  test_metadata_list <- list()
+  test_metadata_list$field_ddh_harvest_src[1] <- "Finances"
+  test_metadata_list$title[1]                 <- "IBRD Statement of Loans - Latest Available Snapshot"
+
+  #invalid value
+  test_metadata_list$field_wbddh_country[1]   <- "FAIL"
+
+  expect_error(ddhconnect::create_json_dataset(values = test_metadata_list))
+})
+
+

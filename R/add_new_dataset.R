@@ -37,7 +37,14 @@ add_new_dataset <- function(metadata_list,
 
     # Return metadata_list if function is being used in unit test
     if(is_unit_test_dataset){
+
       return(metadata_temp_dataset)
+
+    } else if(is_unit_test_resource){
+
+      metadata_temp           <- add_constant_metadata_resource(metadata_temp)
+      metadata_temp_resource  <- filter_resource_fields(metadata_temp, ddh_fields)
+      return(metadata_temp_resource)
     }
 
     json_dat <- ddhconnect::create_json_dataset(values = metadata_temp_dataset,
@@ -56,11 +63,6 @@ add_new_dataset <- function(metadata_list,
       metadata_temp           <- add_constant_metadata_resource(metadata_temp)
       metadata_temp_resource  <- filter_resource_fields(metadata_temp, ddh_fields)
 
-
-      # Return metadata_list if function is being used in unit test
-      if(is_unit_test_resource){
-        return(metadata_temp_resource)
-      }
 
       json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
                                                    dataset_nid = resp_dat$nid,

@@ -4,7 +4,10 @@
 \alias{extract_fin_metadata}
 \title{extract_fin_metadata}
 \usage{
-extract_fin_metadata()
+extract_fin_metadata(is_unit_test = FALSE)
+}
+\arguments{
+\item{is_unit_test}{boolean: check if unit test is being run}
 }
 \value{
 list

@@ -16,11 +16,11 @@ get_ddh_records_status <- function(root_url = dkanr::get_url(),
                                    is_unit_test = FALSE) {
   # ddh
   # subset the ddh catalog for the finance datasets
-  ddh_list <- get_finance_datasets(root_url = root_url, credentials = credentials, is_unit_test)
+  ddh_list <- get_finance_datasets(root_url = root_url, credentials = credentials, is_unit_test = is_unit_test)
   ddh_list$ddh_updated <- as.numeric(lubridate::ymd_hms(ddh_list$ddh_updated))
 
   # finance harvest
-  fin_list <- get_fin_datasets_list()
+  fin_list <- get_fin_datasets_list(is_unit_test = is_unit_test)
 
   # Combine datasets
   full_list <- dplyr::full_join(ddh_list, fin_list, by = "fin_internal_id")
@@ -51,10 +51,11 @@ get_finance_datasets <- function(root_url = dkanr::get_url(),
                                                     token = dkanr::get_token()),
                                  is_unit_test = FALSE) {
 
+  # Account for unit test
   if(is_unit_test){
-
-    finance_datasets <- ddh_fin_datasets_test$result
-
+    finance_datasets <- list()
+    temp_resp <- ddh_fin_datasets_test$result
+    finance_datasets[1:length(temp_resp)] <- purrr::map(temp_resp, function(x) {x})
   } else{
 
     finance_datasets <- ddhconnect::search_catalog(
@@ -73,14 +74,11 @@ get_finance_datasets <- function(root_url = dkanr::get_url(),
       root_url = root_url
     )
   }
-
+  ddh_updated <- as.character(purrr::map(finance_datasets, function(x) x[["field_wbddh_modified_date"]][["und"]][[1]][["value"]]))
+  fin_internal_id <- as.character(purrr::map(finance_datasets, function(x) x[["field_ddh_harvest_sys_id"]][["und"]][[1]][["value"]]))
   ddh_nids <- as.character(purrr::map(finance_datasets, "nid"))
   ddh_created <- as.character(purrr::map(finance_datasets, "created"))
-
-  ddh_updated <- as.character(purrr::map(finance_datasets, function(x) x[["field_wbddh_modified_date"]][["und"]][[1]][["value"]]))
-
-  fin_internal_id <- as.character(purrr::map(finance_datasets, function(x) x[["field_ddh_harvest_sys_id"]][["und"]][[1]][["value"]]))
-
   out <- data.frame(ddh_nids, ddh_created, ddh_updated, fin_internal_id, stringsAsFactors = FALSE)
+
   return(out)
 }

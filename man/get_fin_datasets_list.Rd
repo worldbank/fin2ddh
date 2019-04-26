@@ -5,7 +5,10 @@
 \title{get_fin_datasets_list
 return all the finance datasets with updated time}
 \usage{
-get_fin_datasets_list()
+get_fin_datasets_list(is_unit_test = FALSE)
+}
+\arguments{
+\item{is_unit_test}{boolean: check if unit test is being run}
 }
 \value{
 data.frame

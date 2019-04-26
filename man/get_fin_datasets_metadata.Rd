@@ -4,10 +4,13 @@
 \alias{get_fin_datasets_metadata}
 \title{get_fin_datasets_metadata}
 \usage{
-get_fin_datasets_metadata(fin_internal_ids = NULL)
+get_fin_datasets_metadata(fin_internal_ids = NULL,
+  is_unit_test = FALSE)
 }
 \arguments{
 \item{fin_internal_ids}{vector: list of finanace ids to subset the number of datasets added}
+
+\item{is_unit_test}{boolean: check if unit test is being run}
 }
 \value{
 list

@@ -63,12 +63,12 @@ add_new_dataset <- function(metadata_list,
                            root_url = root_url,
                            credentials = credentials)
 
-      return(cat(resp_dat$uri))
+      return(resp_dat$uri)
 
     }, error = function(e){
 
       message <- paste("Error:",e,"; with creating resources for", resp_dat$uri)
 
-      return(cat(message))
+      return(message)
     })
   }

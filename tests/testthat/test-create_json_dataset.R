@@ -3,8 +3,8 @@ library(jsonlite)
 context("test-create_json_dataset.R")
 
 dkanr::dkanr_setup(url = "http://ddh1stg.prod.acquia-sites.com/",
-                   username = "dec_api_aa",
-                   password = "*42wW9&W")
+                   username = Sys.getenv("ddh_username"),
+                   password = Sys.getenv("ddh_stg_password"))
 
 ddh_status    <- get_ddh_records_status(is_unit_test = TRUE)
 fin_datasets_new <- dplyr::filter(ddh_status, status == "new")

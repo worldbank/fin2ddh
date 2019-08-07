@@ -62,8 +62,6 @@ add_new_dataset <- function(metadata_list,
       # Create Resource
       metadata_temp           <- add_constant_metadata_resource(metadata_temp)
       metadata_temp_resource  <- filter_resource_fields(metadata_temp, ddh_fields)
-
-
       json_res <- ddhconnect::create_json_resource(values = metadata_temp_resource,
                                                    dataset_nid = resp_dat$nid,
                                                    publication_status = "published",

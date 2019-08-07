@@ -6,9 +6,9 @@ dkanr::dkanr_setup(url = "http://ddh1stg.prod.acquia-sites.com/",
                    username = Sys.getenv("ddh_username"),
                    password = Sys.getenv("ddh_stg_password"))
 
-ddh_status    <- get_ddh_records_status(is_unit_test = TRUE)
-fin_datasets_new <- dplyr::filter(ddh_status, status == "new")
-fin_metadata  <- get_fin_datasets_metadata(fin_datasets_new$fin_internal_id, is_unit_test = TRUE)
+ddh_status        <- get_ddh_records_status(is_unit_test = TRUE)
+fin_datasets_new  <- dplyr::filter(ddh_status, status == "new")
+fin_metadata      <- get_fin_datasets_metadata(fin_datasets_new$fin_internal_id, is_unit_test = TRUE)
 
 test_that("Test that dataset values are mapped correctly", {
   # Create JSON of finance dataset

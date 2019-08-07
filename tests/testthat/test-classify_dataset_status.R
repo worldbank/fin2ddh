@@ -130,7 +130,7 @@ test_that("Classify old datasets", {
 })
 
 
-test_that("Classify outdated datasets", {
+test_that("Classify duplicate datasets", {
   # Filter out duplicate datasets
   fin_datasets_duplicate <- dplyr::filter(ddh_status, duplicate_status == "duplicate")
 

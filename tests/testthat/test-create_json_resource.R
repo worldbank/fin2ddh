@@ -2,7 +2,7 @@ library(jsonlite)
 
 context("test-create_json_resource.R")
 
-dkanr::dkanr_setup(url = "http://ddh1stg.prod.acquia-sites.com/",
+dkanr::dkanr_setup(url      = Sys.getenv('stg_url'),
                    username = Sys.getenv("ddh_username"),
                    password = Sys.getenv("ddh_stg_password"))
 
